@@ -2,5 +2,31 @@
   box-sizing: border-box;
 }
 body {
-  background: burlywood;
+  background: #546e7a
+}
+
+.slider .slides{ 
+  min-height: 80vh !important;
+  }
+
+#logo {
+  margin-left: 15px;
+}
+
+.header{
+  margin-top: 4px;
+}
+
+.fa-3x{
+  position: absolute;
+  left: .4em
+}
+
+.top{
+  top: 90px;
+}
+
+.btm{
+  bottom: 90px;
+  transform: rotate(180deg)
 }

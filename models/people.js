@@ -7,7 +7,7 @@ var PeopleSchema = new Schema({
   city: String,
   photo: String,
   url: String,
-  isAlive: String
+  isAlive: Boolean
 });
 
 var People = mongoose.model("People", PeopleSchema);
