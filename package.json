@@ -1,5 +1,5 @@
 {
-  "name": "personal-api",
+  "name": "East-Bay-Gems",
   "version": "1.0.0",
   "description": "api for practice",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Addison Moore",
+  "author": "Addison Moore and Langdon Froker",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
