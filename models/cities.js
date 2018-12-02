@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var CitySchema = new Schema({
+var CitiesSchema = new Schema({
   city: String,
   people: [
     {
@@ -17,5 +17,5 @@ var CitySchema = new Schema({
   ]
 });
 
-var Cities = mongoose.model("Cities", CitiessSchema);
+var Cities = mongoose.model("Cities", CitiesSchema);
 module.exports = Cities;
