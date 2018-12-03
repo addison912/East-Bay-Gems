@@ -52,3 +52,12 @@ li.indicator-item.active {
   display: flex;
   flex-flow: row wrap;
 }
+
+#nav-profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  margin: 12px;
+}
