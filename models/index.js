@@ -5,4 +5,4 @@ mongoose.connect(
 
 module.exports.Places = require("./places.js");
 module.exports.People = require("./people.js");
-module.exports.Cities = require("./cities.js");
+module.exports.Users = require("./users.js");
