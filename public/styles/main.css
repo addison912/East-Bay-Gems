@@ -17,16 +17,16 @@ body {
   margin-top: 4px;
 }
 
-.fa-3x{
-  position: absolute;
-  left: .4em
+.container{
+  width: 90% !important;
+  max-width: inherit;
 }
 
-.top{
-  top: 90px;
+.section{
+  margin-bottom: 0;
 }
 
-.btm{
-  bottom: 90px;
-  transform: rotate(180deg)
+li.indicator-item.active{
+  background-color: chocolate !important;
 }
+
