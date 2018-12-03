@@ -3,7 +3,7 @@ const db = require("./models");
 var places_list = [
   {
     name: "Albany Bulb",
-    type: ["park", "featured"],
+    type: ["park"],
     description:
       "The Albany Bulb (also simply known as The Bulb) is a former landfill largely owned by the City of Albany, in California. The Bulb is the west end of a landfill peninsula jutting west from the east shore of San Francisco Bay. The term 'Bulb' is often used to refer to the entire peninsula, which includes the Albany Plateau, north of Buchanan Street at its base; the high narrow 'Neck,' and the round 'Bulb.' The Bulb is part of the City of Albany, and can be reached via Buchanan Street or the Bay Trail along the east side of San Francisco Bay.",
     city: "Albany",
