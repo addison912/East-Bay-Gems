@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="google-signin-scope" content="profile email" />
+    <meta
+      name="google-signin-client_id"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <title>East Bay Gems</title>
 
     <!-- Import Google Icon Font -->
@@ -12,10 +19,7 @@
       rel="stylesheet"
     />
     <!-- Import materialize.css -->
-    <link 
-      rel="stylesheet" 
-      type="text/css" 
-      href="/styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <link
       type="text/css"
       rel="stylesheet"
@@ -36,16 +40,47 @@
     <div class="navbar-fixed">
       <nav class=" blue-grey darken-1">
         <div class="nav-wrapper">
-          <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
+          <a href="/" class="brand-logo"
+            ><i id="logo" class="fas fa-gem"></i>East Bay Gems</a
+          >
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="home.html">Browse</a></li>
             <li><a href="home.html">Random</a></li>
             <li><a href="home.html">Search</a></li>
             <li><a href="about.html">About</a></li>
+            <li>
+              <a
+                class="waves-effect waves-light btn modal-trigger"
+                href="#sign-in"
+                >Login</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </div>
+
+    <!-- Modal Structure -->
+    <div id="sign-in" class="modal">
+      <div class="modal-content sign-in">
+        <h5>Sign in</h5>
+        <div
+          class="g-signin2"
+          data-onsuccess="onSignIn"
+          data-theme="dark"
+        ></div>
+        <div class="flex-row">
+          <a class="waves-effect waves-light btn">Login</a
+          ><a class="waves-effect waves-light btn">Sign up</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >cancel</a
+        >
+      </div>
+    </div>
+
     <div class="slider">
       <ul class="slides">
         <li>
