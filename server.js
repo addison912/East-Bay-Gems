@@ -27,6 +27,9 @@ app.get("/", function(req, res) {
 app.get("/home.html", function(req, res) {
   res.sendFile("views/home.html", { root: __dirname });
 });
+app.get("/about.html", function(req, res) {
+  res.sendFile("views/about.html", { root: __dirname });
+});
 app.get("/api/cities", (req, res) => {
   db.Cities.find().exec(function(err, cities) {
     if (err) {
