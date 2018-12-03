@@ -54,7 +54,11 @@ $(document).ready(function() {
     console.log("error");
   }
 
-  $('#places').on('click', function(){
-    $('#places_menu').toggleClass('hide')
-  })
+  $("#places").on("click", function() {
+    $("#places_menu").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $(".modal").modal();
 });
