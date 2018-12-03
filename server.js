@@ -16,6 +16,10 @@ app.use(express.json());
 // body parser config to accept our datatypes
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
+
+
 ////////////////////
 //  ROUTES
 ///////////////////
@@ -50,6 +54,36 @@ app.get("/api/places", (req, res) => {
     }
   });
 });
+app.post('/api/places', (req, res)=>{
+  var newPlace = new db.Places({
+    name: req.body.name,
+    type: req.body.type,
+    description: req.body.description,
+    city: req.body.city,
+    
+    url: req.body.url,
+    photo: req.body.photo
+  });
+  console.log(req.body.city);
+  newPlace.save(function(err, place){
+    if (err) {
+      console.log("create error: " + err);
+    }
+    console.log("created ", place.name);
+  });
+})
+/* app.post("/api/places", (req, res) => {
+  var newPlace = req.body
+  db.Places.create(newPlace, function(err, place){
+    if(err){
+      console.log("error creating new place");
+    }
+      console.log("created ", place.name);
+      res.json(place);
+  });
+}) */
+
+
 
 //run server
 let port = process.env.PORT || 3000;
