@@ -10,5 +10,5 @@ var userSchema = new Schema({
   posts: []
 });
 
-var Places = mongoose.model("User", userSchema);
-module.exports = User;
+var Users = mongoose.model("User", userSchema);
+module.exports = Users;
