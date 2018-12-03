@@ -2,31 +2,36 @@
   box-sizing: border-box;
 }
 body {
-  background: #546e7a
+  background: #546e7a;
 }
 
-.slider .slides{ 
-  min-height: 80vh ;
-  }
+.slider .slides {
+  min-height: 80vh !important;
+}
 
 #logo {
   margin-left: 15px;
 }
 
-.header{
+.header {
   margin-top: 4px;
 }
 
-.container{
-  width: 90% ;
+.container {
+  width: 90% !important;
   max-width: inherit;
 }
 
-.section{
+.section {
   margin-bottom: 0;
 }
 
-li.indicator-item.active{
-  background-color: chocolate ;
+li.indicator-item.active {
+  background-color: chocolate !important;
 }
 
+.card-image {
+  width: 40%;
+  background-position: center;
+  background-size: cover;
+}
