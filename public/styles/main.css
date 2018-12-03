@@ -28,7 +28,7 @@ body {
 }
 
 li.indicator-item.active{
-  background-color: chocolate ;
+  background-color: chocolate !important;
 }
 
 .center-cropped {
