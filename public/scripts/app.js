@@ -1,25 +1,22 @@
-$(document).ready(function(){
+$(document).ready(function() {
   console.log("Sanity check");
-  $('.slider').slider({
+  $(".slider").slider({
     height: 800
   });
-  $('select').formSelect();
-  
+  $("select").formSelect();
 
   $.ajax({
-    method: 'GET',
-    url: '/api/places',
+    method: "GET",
+    url: "/api/places",
     success: placeSuccess,
     error: placeError
-  })
+  });
 
-
-    
-  function placeSuccess (places){
-    (places.forEach(elem => {
+  function placeSuccess(places) {
+    places.forEach(elem => {
       var placeId = elem._id;
       var type = elem.type;
-      var feat = elem.isFeatured
+      var feat = elem.isFeatured;
       var name = elem.name;
       var city = elem.city;
       var desc = elem.description;
@@ -27,10 +24,11 @@ $(document).ready(function(){
       var url = elem.url;
       var lat = elem.coordinates.lat;
       var lng = elem.coordinates.lng;
-    
-      cardHtml = `<div class="card small horizontal hoverable">
-                    <div class="card-image waves-effect waves-block   waves-light">
-                      <img class="activator right" src="${image}">
+
+      // <img class="activator right" src="${image}">
+
+      cardHtml = `<div class="card small horizontal hoverable" id=${placeId}>
+                    <div class="card-image waves-effect waves-block waves-light">
                     </div>
                     <div class="card-stacked">
                       <div class="card-content">
@@ -45,12 +43,15 @@ $(document).ready(function(){
                         <span class="card-title grey-text text-darken-4">Lat: ${lat} and Lon: ${lng}<i class="material-icons right">close</i></span>
                         <p>Info</p>
                       </div>
-                  </div>`
-        $('#gems').append(cardHtml)
-      })
-    )}
+                  </div>`;
+      $("#gems").append(cardHtml);
+      document
+        .getElementById(`${placeId}`)
+        .querySelector(".card-image").style.backgroundImage = `url("${image}")`;
+    });
+  }
   function placeError() {
-    console.log('error');
+    console.log("error");
   }
 
 

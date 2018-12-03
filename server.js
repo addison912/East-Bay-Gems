@@ -51,7 +51,8 @@ app.get("/api/places", (req, res) => {
   });
 });
 
-//run server on port 3000
-app.listen(process.env.PORT || 3000, function() {
-  console.log("personal api app listening at http://localhost:3000/");
+//run server
+let port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log(`east-bay-gems app listening at port ${port}`);
 });
