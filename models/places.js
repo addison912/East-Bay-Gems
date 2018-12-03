@@ -8,7 +8,8 @@ var PlacesSchema = new Schema({
   city: String,
   photo: String,
   url: String,
-  coordinates: { lat: Number, lng: Number }
+  coordinates: { lat: Number, lng: Number },
+  sFeatured: Boolean
 });
 
 var Places = mongoose.model("Places", PlacesSchema);
