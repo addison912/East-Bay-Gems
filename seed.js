@@ -57,47 +57,10 @@ var people_list = [
   }
 ];
 
-var cities_list = [
-  {
-    city: "Oakland",
-    people: [],
-    places: []
-  },
-  {
-    city: "Berkeley",
-    people: [],
-    places: []
-  },
-  {
-    city: "Albany",
-    people: [],
-    places: []
-  },
-  {
-    city: "El Cerrito",
-    people: [],
-    places: []
-  },
-  {
-    city: "Richmond",
-    people: [],
-    places: []
-  },
-  {
-    city: "Port Costa",
-    people: [],
-    places: []
-  },
-  {
-    city: "El Sobrante",
-    people: [],
-    places: []
-  }
-];
-
-simpleCreate(db.People, people_list, "people");
-simpleCreate(db.Places, places_list, "places");
-simpleCreate(db.Cities, cities_list, "cities");
+db.Cities.deleteMany({}, (err, cities) => {
+  simpleCreate(db.People, people_list, "people");
+  simpleCreate(db.Places, places_list, "places");
+});
 
 function simpleCreate(DB, object_list, name) {
   DB.deleteMany({}, (err, objects) => {
