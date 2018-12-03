@@ -52,4 +52,9 @@ $(document).ready(function(){
   function placeError() {
     console.log('error');
   }
+
+
+  $('#places').on('click', function(){
+    $('#places_menu').toggleClass('hide')
+  })
 });

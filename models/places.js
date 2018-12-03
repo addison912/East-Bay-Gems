@@ -9,11 +9,7 @@ var PlacesSchema = new Schema({
   photo: String,
   url: String,
   coordinates: { lat: Number, lng: Number },
-<<<<<<< HEAD
-  sFeatured: Boolean
-=======
   isFeatured: Boolean
->>>>>>> Langdons
 });
 
 var Places = mongoose.model("Places", PlacesSchema);
