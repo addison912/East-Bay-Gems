@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   console.log("Sanity check");
   $('.slider').slider({
@@ -20,6 +19,7 @@ $(document).ready(function(){
     (places.forEach(elem => {
       var placeId = elem._id;
       var type = elem.type;
+      var feat = elem.isFeatured
       var name = elem.name;
       var city = elem.city;
       var desc = elem.description;

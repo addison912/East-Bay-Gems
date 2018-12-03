@@ -95,27 +95,18 @@ var cities_list = [
   }
 ];
 
-simpleCreate(db.People, people_list);
-simpleCreate(db.Places, places_list);
-db.Cities.deleteMany({}, function(err, cities) {
-  console.log("removed all cities");
-  db.Cities.create(cities_list, function(err, cities) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log("recreated all cities");
-    console.log("created", cities.length, "cities");
-  });
-});
+simpleCreate(db.People, people_list, "people");
+simpleCreate(db.Places, places_list, "places");
+simpleCreate(db.Cities, cities_list, "cities");
 
-function simpleCreate(DB, object_list) {
+function simpleCreate(DB, object_list, name) {
   DB.deleteMany({}, (err, objects) => {
     DB.create(object_list, (err, objects) => {
       if (err) {
         return console.log("err", err);
       }
-      console.log("created", objects.length, "objects");
+      console.log("deleted all", name);
+      console.log("created", objects.length, name);
     });
   });
 }

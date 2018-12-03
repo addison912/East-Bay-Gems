@@ -6,7 +6,7 @@ body {
 }
 
 .slider .slides{ 
-  min-height: 80vh !important;
+  min-height: 80vh ;
   }
 
 #logo {
@@ -18,7 +18,7 @@ body {
 }
 
 .container{
-  width: 90% !important;
+  width: 90% ;
   max-width: inherit;
 }
 
@@ -27,6 +27,6 @@ body {
 }
 
 li.indicator-item.active{
-  background-color: chocolate !important;
+  background-color: chocolate ;
 }
 
