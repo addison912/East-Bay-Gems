@@ -35,6 +35,16 @@ app.get("/about.html", function(req, res) {
   res.sendFile("views/about.html", { root: __dirname });
 });
 
+app.get("/api/people", (req, res) =>{
+  db.People.find().exec(function(err, people){
+    if (err){
+      console.log(err);
+    } else {
+      res.json(people)
+    };
+  });
+});
+
 app.get("/api/places", (req, res) => {
   db.Places.find().exec(function(err, places) {
     if (err) {
@@ -45,6 +55,7 @@ app.get("/api/places", (req, res) => {
     }
   });
 });
+
 app.get("/api/places/featured", (req, res) => {
   db.Places.find().exec(function(err, places) {
     var featPlaces =[];
@@ -56,13 +67,9 @@ app.get("/api/places/featured", (req, res) => {
         if(featPlace.isFeatured){
           featPlaces.push(featPlace)
         } 
-        
       });
       console.log(featPlaces);
       res.json(featPlaces) 
-      
-      
-    
   });
 });
 

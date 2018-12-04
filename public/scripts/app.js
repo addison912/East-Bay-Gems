@@ -73,14 +73,8 @@ $("#newPlaceForm").on("submit", function(e) {
   });
 
   function newPlaceSuccess(json) {
-    $("#newPlaceForm input").val("");
     arrayOfPlaces.push(json);
     console.log(json);
-    renderPlace();
   }
 
-  function renderPlace() {
-    $("#gems").empty();
-    arrayOfPeople = placeSuccess(places);
-  }
 });
