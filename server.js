@@ -30,14 +30,17 @@ app.get("/home.html", function(req, res) {
 app.get("/about.html", function(req, res) {
   res.sendFile("views/about.html", { root: __dirname });
 });
+app.get("/profile.html", function(req, res) {
+  res.sendFile("views/profile.html", { root: __dirname });
+});
 
-app.get("/api/people", (req, res) =>{
-  db.People.find().exec(function(err, people){
-    if (err){
+app.get("/api/people", (req, res) => {
+  db.People.find().exec(function(err, people) {
+    if (err) {
       console.log(err);
     } else {
-      res.json(people)
-    };
+      res.json(people);
+    }
   });
 });
 

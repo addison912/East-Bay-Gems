@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Import Google Sign In -->
     <meta name="google-signin-scope" content="profile email" />
     <meta
-     name="google-signin-client_id"
-     content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
-   />
+      name="google-signin-client_id"
+      content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
+    />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-    <title>East Bay Gems</title>
-
     <!-- Import Google Icon Font -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -37,6 +36,7 @@
     <title>Landing</title>
   </head>
   <body>
+    <!-- Nav Bar -->
     <div class="navbar-fixed">
       <nav class=" blue-grey darken-1">
         <div class="nav-wrapper">
@@ -44,10 +44,10 @@
             ><i id="logo" class="fas fa-gem"></i>East Bay Gems</a
           >
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="home.html">Browse</a></li>
-            <li><a href="home.html">Random</a></li>
-            <li><a href="home.html">Search</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="/home.html">Browse</a></li>
+            <li><a href="/home.html">Random</a></li>
+            <li><a href="/home.html">Search</a></li>
+            <li><a href="/about.html">About</a></li>
             <li id="sign-in-button">
               <a
                 class="waves-effect waves-light btn modal-trigger"
@@ -55,13 +55,27 @@
                 >Login</a
               >
             </li>
-            <li><div id="nav-profile-pic" class="hide"></div></li>
+            <li>
+              <a
+                id="nav-profile-pic"
+                class="hide dropdown-trigger"
+                data-target="user-dropdown"
+              ></a>
+            </li>
           </ul>
         </div>
       </nav>
     </div>
-  
-    <!-- Modal Structure -->
+
+    <!-- Sign in start -->
+    <!-- User Dropdown -->
+    <ul id="user-dropdown" class="dropdown-content">
+      <li><a href="profile.html">Profile</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="#" onclick="signOut();">Sign out</a></li>
+    </ul>
+
+    <!-- Sign in modal -->
     <div id="sign-in" class="modal">
       <div class="modal-content sign-in">
         <h5>Sign in</h5>
@@ -77,16 +91,13 @@
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-          >cancel</a
+          >Close</a
         >
       </div>
     </div>
+    <!-- Sign in end -->
 
-    <div class="slider">
-      <ul id="featured" class="slides">
-        
-      </ul>
-    </div>
+    <div class="slider"><ul id="featured" class="slides"></ul></div>
 
     <!-- Materialize JS -->
     <script
@@ -95,8 +106,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="/scripts/materialize.min.js"></script>
-    <script src="/scripts/login.js"></script>
-    <script src="/scripts/featured.js"></script>
+    <script type="text/javascript" src="/scripts/login.js"></script>
+    <script type="text/javascript" src="/scripts/featured.js"></script>
   </body>
 </html>
-

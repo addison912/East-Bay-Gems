@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>East Bay Gems</title>
-
+    <!-- Import Google Sign In -->
+    <meta name="google-signin-scope" content="profile email" />
+    <meta
+      name="google-signin-client_id"
+      content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Import Google Icon Font -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
     <!-- Import materialize.css -->
-    <link 
-      rel="stylesheet" 
-      type="text/css" 
-      href="/styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <link
       type="text/css"
       rel="stylesheet"
@@ -31,53 +34,103 @@
     />
 
     <title>About</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row section">
-            <div class="col s12 m7 l6">
-              <div class="card-panel ">
-                <h2 class="header grey-text">Addison Moore</h2>
-                <span class="grey-text">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                </span>
-              </div> 
-            </div>
-            <div class="col s12 m7 l6">
-                <div class="card-panel ">
-                  <h2 class="header grey-text">Langdon Froker</h2>
-                  <span class="grey-text">I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                  </span>
-                </div> 
-              </div>
-          
-          
-          
-          
+  </head>
+  <body>
+     <!-- Nav Bar -->
+     <div class="navbar-fixed">
+        <nav class="blue-grey darken-1">
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/home.html">Browse</a></li>
+              <li><a href="/home.html">Random</a></li>
+              <li><a href="/home.html">Search</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li id="sign-in-button">
+                  <a
+                    class="waves-effect waves-light btn modal-trigger"
+                    href="#sign-in"
+                    >Login</a
+                  >
+                </li>
+                <li>
+                  <a
+                    id="nav-profile-pic"
+                    class="hide dropdown-trigger"
+                    data-target="user-dropdown"
+                  ></a>
+            </ul>
           </div>
-
-    <div class="divider">
-
-    </div>    
+        </nav>
+      </div>
+      <header>
+  
+      <!-- Sign in start -->
+      <!-- User Dropdown -->
+      <ul id="user-dropdown" class="dropdown-content">
+          <li><a href="/profile.html">Profile</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#" onclick="signOut();">Sign out</a></li>
+        </ul>
     
-    
+        <!-- Sign in modal -->
+        <div id="sign-in" class="modal">
+          <div class="modal-content sign-in">
+            <h5>Sign in</h5>
+            <div
+              class="g-signin2"
+              data-onsuccess="onSignIn"
+              data-theme="dark"
+            ></div>
+            <div class="flex-row">
+              <a class="waves-effect waves-light btn">Login</a
+              ><a class="waves-effect waves-light btn">Sign up</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+              >Close</a
+            >
+          </div>
+        </div>
+        <!-- Sign in end -->
+    <div class="container">
+      <div class="row section">
+        <div class="col s12 m7 l6">
+          <div class="card-panel ">
+            <h2 class="header grey-text">Addison Moore</h2>
+            <span class="grey-text"
+              >I am a very simple card. I am good at containing small bits of
+              information. I am convenient because I require little markup to
+              use effectively. I am similar to what is called a panel in other
+              frameworks.
+            </span>
+          </div>
+        </div>
+        <div class="col s12 m7 l6">
+          <div class="card-panel ">
+            <h2 class="header grey-text">Langdon Froker</h2>
+            <span class="grey-text"
+              >I am a very simple card. I am good at containing small bits of
+              information. I am convenient because I require little markup to
+              use effectively. I am similar to what is called a panel in other
+              frameworks.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
     </div>
 
-
-
-
-
-
-  <!-- Materialize JS -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script 
-    type="text/javascript" 
-    src="/scripts/materialize.min.js"></script>
-  <script 
-    src="/scripts/app.js"></script>
-</body>
+    <!-- Materialize JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+    <script type="text/javascript" src="/scripts/login.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </body>
 </html>

@@ -3,10 +3,12 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
   username: String,
+  uid: String,
   imageUrl: String,
   fullName: String,
   email: String,
-  posts: []
+  posts: [],
+  likes: []
 });
 
 var Users = mongoose.model("User", userSchema);

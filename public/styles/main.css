@@ -67,4 +67,17 @@ li.indicator-item.active {
   width: 50%;
 }
 
+#user-dropdown {
+  position: fixed;
+  top: -52px;
+  left: -12px;
+  margin: 0;
+  width: 100px;
+}
+
+.dropdown-content {
+  color: black;
+  width: 100px;
+}
+
 /*# sourceMappingURL=main.css.map */
