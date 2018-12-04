@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
   username: String,
   imageUrl: String,
-  firstName: String,
-  lastName: String,
+  fullName: String,
   email: String,
   posts: []
 });
