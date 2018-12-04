@@ -1,13 +1,13 @@
 $(document).ready(function() {
   console.log("Sanity check");
-  $('.modal').modal();
+  $(".modal").modal();
   $(".slider").slider({
     height: 800
   });
   $("select").formSelect();
-  $('#places').on('click', function(){
-    $('#places_menu').toggleClass('hide')
-  })
+  $("#places").on("click", function() {
+    $("#places_menu").toggleClass("hide");
+  });
 });
 var arrayOfPlaces = [];
 var arrayOfPeople = [];
@@ -53,7 +53,12 @@ function placeSuccess(places) {
                       <p>Info</p>
                     </div>
                 </div>`;
+<<<<<<< HEAD
     $('#gems').append(cardHtml)
+=======
+
+    $("#gems").append(cardHtml);
+>>>>>>> 37fb11420d57f54e90ed8aa3fb27beeb8c383431
     document
       .getElementById(`${placeId}`)
       .querySelector(".card-image").style.backgroundImage = `url("${image}")`;
@@ -64,25 +69,23 @@ function placeError() {
   console.log("error");
 }
 
-$('#newPlaceForm').on('submit', function(e) {
+$("#newPlaceForm").on("submit", function(e) {
   $.ajax({
-    method: 'POST',
-    url: '/api/places',
+    method: "POST",
+    url: "/api/places",
     data: $(this).serialize(),
-    success: newPlaceSuccess,
-})
+    success: newPlaceSuccess
+  });
 
-function newPlaceSuccess(json){
-$('#newPlaceForm input').val('');
-      arrayOfPlaces.push(json);
-      console.log(json);
-      renderPlace()
-}
+  function newPlaceSuccess(json) {
+    $("#newPlaceForm input").val("");
+    arrayOfPlaces.push(json);
+    console.log(json);
+    renderPlace();
+  }
 
-function renderPlace(){
-  $('#gems').empty();
-  arrayOfPeople = placeSuccess(places)
-}
-})
-
-
+  function renderPlace() {
+    $("#gems").empty();
+    arrayOfPeople = placeSuccess(places);
+  }
+});

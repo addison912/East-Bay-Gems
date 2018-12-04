@@ -57,10 +57,8 @@ var people_list = [
   }
 ];
 
-db.Cities.deleteMany({}, (err, cities) => {
-  simpleCreate(db.People, people_list, "people");
-  simpleCreate(db.Places, places_list, "places");
-});
+simpleCreate(db.People, people_list, "people");
+simpleCreate(db.Places, places_list, "places");
 
 function simpleCreate(DB, object_list, name) {
   DB.deleteMany({}, (err, objects) => {
