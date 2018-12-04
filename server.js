@@ -54,13 +54,23 @@ app.get("/api/places", (req, res) => {
     }
   });
 });
+app.get("/api/places/featured", (req, res) => {
+  db.Places.find({featured: true}).exec(function(err, places) {
+    if (err) {
+      console.log("index error: " + err);
+      res.sendStatus(500);
+    } else {
+      res.json(places);
+    }
+  });
+});
+
 app.post('/api/places', (req, res)=>{
   var newPlace = new db.Places({
     name: req.body.name,
     type: req.body.type,
     description: req.body.description,
     city: req.body.city,
-    
     url: req.body.url,
     photo: req.body.photo
   });
@@ -72,16 +82,7 @@ app.post('/api/places', (req, res)=>{
     console.log("created ", place.name);
   });
 })
-/* app.post("/api/places", (req, res) => {
-  var newPlace = req.body
-  db.Places.create(newPlace, function(err, place){
-    if(err){
-      console.log("error creating new place");
-    }
-      console.log("created ", place.name);
-      res.json(place);
-  });
-}) */
+
 
 
 
