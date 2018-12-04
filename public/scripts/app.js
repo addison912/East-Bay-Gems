@@ -1,13 +1,13 @@
 $(document).ready(function() {
   console.log("Sanity check");
-  $('.modal').modal();
+  $(".modal").modal();
   $(".slider").slider({
     height: 800
   });
   $("select").formSelect();
-  $('#places').on('click', function(){
-    $('#places_menu').toggleClass('hide')
-  })
+  $("#places").on("click", function() {
+    $("#places_menu").toggleClass("hide");
+  });
 });
 var arrayOfPlaces = [];
 var arrayOfPeople = [];
@@ -19,7 +19,7 @@ $.ajax({
   url: "/api/places/featured",
   success: featSuccess,
   error: featError
-})
+});
 function featSuccess(places) {
   places.forEach(elem => {
     var placeId = elem._id;
@@ -36,14 +36,12 @@ function featSuccess(places) {
                   <div class="caption center-align">
                     <h3>${name}</h3><span>${city}</span>
                     <h5 class="light grey-text text-lighten-3">${desc}</h5>
-                    <h6>Submited by ${'user'}</h6>
+                    <h6>Submited by ${"user"}</h6>
                   </div>
-              </li>`
-    $('.slides').append(cardHtml)
-
- 
-  })}
-
+              </li>`;
+    $(".slides").append(cardHtml);
+  });
+}
 
 $.ajax({
   method: "GET",
@@ -93,25 +91,27 @@ function placeError() {
   console.log("error");
 }
 
-$('#newPlaceForm').on('submit', function(e) {
+$("#newPlaceForm").on("submit", function(e) {
   $.ajax({
-    method: 'POST',
-    url: '/api/places',
+    method: "POST",
+    url: "/api/places",
     data: $(this).serialize(),
-    success: newPlaceSuccess,
-})
+    success: newPlaceSuccess
+  });
 
-function newPlaceSuccess(json){
-$('#newPlaceForm input').val('');
-      arrayOfPlaces.push(json);
-      console.log(json);
-      renderPlace()
-}
+  function newPlaceSuccess(json) {
+    $("#newPlaceForm input").val("");
+    arrayOfPlaces.push(json);
+    console.log(json);
+    renderPlace();
+  }
 
-function renderPlace(){
-  $('#gems').empty();
-  arrayOfPeople = placeSuccess(places)
-}
-})
+  function renderPlace() {
+    $("#gems").empty();
+    arrayOfPeople = placeSuccess(places);
+  }
+});
 
-
+$(document).ready(function() {
+  $(".modal").modal();
+});
