@@ -63,4 +63,8 @@ li.indicator-item.active {
   margin: 12px;
 }
 
+.row .col.l4 {
+  width: 50%;
+}
+
 /*# sourceMappingURL=main.css.map */
