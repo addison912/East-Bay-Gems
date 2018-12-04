@@ -20,7 +20,8 @@ var places_list = [
     photo:
       "https://assets.simpleviewcms.com/simpleview/image/fetch/c_limit,q_80,w_1200/https://res.cloudinary.com/simpleview/image/upload/crm/oakland/Screen-Shot-2018-05-30-at-11.02.22-AM-f6196db25056a36_f61c024c-5056-a36f-23e7a8124717b481.png",
     url: "https://www.thealleyoakland.com/",
-    coordinates: { lat: 37.813141, lng: -122.247166 }
+    coordinates: { lat: 37.813141, lng: -122.247166 },
+    isFeatured: true
   },
   {
     name: "Warehouse Cafe",
@@ -41,7 +42,8 @@ var places_list = [
       "Claremont Canyon Regional Preserve is a small regional park mainly located in the city of Oakland, California, and administered by the East Bay Regional Park District. The park is named for the canyon in which it's situated, Claremont Canyon, out of which Claremont Creek flows on its way to its confluence with Temescal Creek. Originally, the canyon was named 'Harwood's Canyon', then 'Telegraph Canyon'. The name was changed to Claremont by a developer of the nearby Claremont district.",
     photo: "https://i.imgur.com/Zc0GPoY.jpg",
     url: "https://en.wikipedia.org/wiki/Claremont_Canyon_Regional_Preserve",
-    coordinates: { lat: 37.8659, lng: -122.2365 }
+    coordinates: { lat: 37.8659, lng: -122.2365 },
+    isFeatured: true
   }
 ];
 
