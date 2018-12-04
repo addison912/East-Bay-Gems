@@ -1,4 +1,10 @@
+var frontPage = []
+var allPlaces;
+var allPeople;
+
+
 $(document).ready(function() {
+  
   console.log("Sanity check");
   $(".modal").modal();
   $(".slider").slider({
@@ -6,14 +12,8 @@ $(document).ready(function() {
   });
   $("select").formSelect();
   $("#places").on("click", function() {
-    $("#places_menu").toggleClass("hide");
+  $("#places_menu").toggleClass("hide");
   });
-});
-var arrayOfPlaces = [];
-var arrayOfPeople = [];
-function featError() {
-  console.log("error");
-}
 
 $.ajax({
   method: "GET",
@@ -22,48 +22,29 @@ $.ajax({
   error: placeError
 });
 
-function placeSuccess(places) {
-  places.forEach(elem => {
-    var placeId = elem._id;
-    var type = elem.type;
-    var feat = elem.isFeatured;
-    var name = elem.name;
-    var city = elem.city;
-    var desc = elem.description;
-    var image = elem.photo;
-    /* var lat = elem.coordinates.lat;
-    console.log(lat);
-    var lng = elem.coordinates.lng; */
-    var url = elem.url;
-
-    cardHtml = `<div class="card small horizontal hoverable" id=${placeId}>
-                  <div class="card-image waves-effect waves-block waves-light">
-                  </div>
-                  <div class="card-stacked">
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${name} - ${city} </span>
-                      <p>${desc}</p>
-                    </div>
-                    <div class="card-action">
-                      <a href="${url}">More info</a>
-                    </div>
-                  </div>
-                  <div class="card-reveal col l4">
-                      <span class="card-title grey-text text-darken-4">Lat=, Lon=<i class="material-icons right">close</i></span>
-                      <p>Info</p>
-                    </div>
-                </div>`;
-    $('#gems').append(cardHtml)
-    document
-      .getElementById(`${placeId}`)
-      .querySelector(".card-image").style.backgroundImage = `url("${image}")`;
+function placeSuccess(places){
+  allPlaces = places;
+  $.ajax({
+    method: "GET",
+    url: "/api/people",
+    success: peopleSuccess,
+    error: peopleError
   });
-  
 }
+function peopleSuccess(people){
+  allPeople = people;
+  populate();
+}
+
 function placeError() {
   console.log("error");
 }
-
+function featError() {
+  console.log("error");
+}
+function peopleError(){
+  console.log("error");
+}
 $("#newPlaceForm").on("submit", function(e) {
   $.ajax({
     method: "POST",
@@ -73,8 +54,58 @@ $("#newPlaceForm").on("submit", function(e) {
   });
 
   function newPlaceSuccess(json) {
-    arrayOfPlaces.push(json);
     console.log(json);
   }
 
 });
+
+});
+
+let shuffle = (array) => {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
+
+
+let populate = () =>{
+  gems = allPeople.concat(allPlaces);
+  let results = shuffle(gems);
+  results.forEach(gem => {
+    console.log(gem);
+    cardHtml = `<div class="card small horizontal hoverable" id=${gem._id}>
+                  <div class="card-image waves-effect waves-block waves-light">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${gem.name} - ${gem.city} </span>
+                      <p>${gem.description}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="${gem.photo}">More info</a>
+                    </div>
+                  </div>
+                  <div class="card-reveal col l4">
+                      <span class="card-title grey-text text-darken-4">Lat=, Lon=<i class="material-icons right">close</i></span>
+                      <p>Info</p>
+                    </div>
+                </div>`;
+    $('#gems').append(cardHtml)
+    document
+      .getElementById(`${gem._id}`)
+      .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
+    });
+}
