@@ -14,36 +14,6 @@ var arrayOfPeople = [];
 function featError() {
   console.log("error");
 }
-$.ajax({
-  method: "GET",
-  url: "/api/places/featured",
-  success: featSuccess,
-  error: featError
-})
-function featSuccess(places) {
-  places.forEach(elem => {
-    var placeId = elem._id;
-    var type = elem.type;
-    var feat = elem.isFeatured;
-    var name = elem.name;
-    var city = elem.city;
-    var desc = elem.description;
-    var image = elem.photo;
-    var url = elem.url;
-
-    cardHtml = `<li>
-                  <img src="${image}" />
-                  <div class="caption center-align">
-                    <h3>${name}</h3><span>${city}</span>
-                    <h5 class="light grey-text text-lighten-3">${desc}</h5>
-                    <h6>Submited by ${'user'}</h6>
-                  </div>
-              </li>`
-    $('.slides').append(cardHtml)
-
- 
-  })}
-
 
 $.ajax({
   method: "GET",
@@ -83,11 +53,12 @@ function placeSuccess(places) {
                       <p>Info</p>
                     </div>
                 </div>`;
-
+    $('#gems').append(cardHtml)
     document
       .getElementById(`${placeId}`)
       .querySelector(".card-image").style.backgroundImage = `url("${image}")`;
   });
+  
 }
 function placeError() {
   console.log("error");
