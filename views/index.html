@@ -7,7 +7,7 @@
     <meta name="google-signin-scope" content="profile email" />
     <meta
       name="google-signin-client_id"
-      content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
     />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
@@ -48,14 +48,13 @@
             <li><a href="home.html">Random</a></li>
             <li><a href="home.html">Search</a></li>
             <li><a href="about.html">About</a></li>
-            <li id="sign-in-button">
+            <li>
               <a
                 class="waves-effect waves-light btn modal-trigger"
                 href="#sign-in"
                 >Login</a
               >
             </li>
-            <li><div id="nav-profile-pic" class="hide"></div></li>
           </ul>
         </div>
       </nav>
@@ -83,61 +82,8 @@
     </div>
 
     <div class="slider">
-      <ul class="slides">
-        <li>
-          <img src="/images/baytrips6.jpg" />
-          <!-- random image -->
-          <div class="caption center-align">
-            <h3>Berkeley Pier</h3>
-            <h5 class="light grey-text text-lighten-3">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              consectetur enim, impedit dignissimos mollitia natus quae rerum,
-              Quisquam minus quos possimus illum.
-            </h5>
-            <h6>Submited by user1</h6>
-          </div>
-        </li>
-        <li>
-          <img src="/images/berk.jpg" />
-          <!-- random image -->
-          <div class="caption left-align">
-            <h3>Berkeley Campanile</h3>
-            <h5 class="light grey-text text-lighten-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              modi consectetur iure ea doloremque iusto nulla quasi sunt itaque
-              aliquam magnam.
-            </h5>
-            <h6>Submited by user1</h6>
-          </div>
-        </li>
-        <li>
-          <img src="/images/photo-1527314392553-2c7bded21b23.jpeg" />
-          <!-- random image -->
-          <div class="caption right-align">
-            <h3>Alameda Marina</h3>
-            <h5 class="light grey-text text-lighten-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio illo, ad aperiam saepe nesciunt dolorum facilis quia
-              hic modi dolor natus perferendis cptates pariatur numquam
-              accusamus quo?
-            </h5>
-            <h6>Submited by user1</h6>
-          </div>
-        </li>
-        <li>
-          <img src="/images/Port of Oakland.jpg" />
-          <!-- random image -->
-          <div class="caption center-align">
-            <h3>Oakland Docks</h3>
-            <h5 class="light grey-text text-lighten-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores error provident quas placeat corrupti! Minima, ipsa
-              eaque illum provident cum ea cupiditate odit, distinctio
-              assumenda, et dignissimos excepturi quis voluptas..
-            </h5>
-            <h6>Submited by user1</h6>
-          </div>
-        </li>
+      <ul id="featured" class="slides">
+        
       </ul>
     </div>
 
@@ -149,6 +95,6 @@
     ></script>
     <script type="text/javascript" src="/scripts/materialize.min.js"></script>
     <script src="/scripts/login.js"></script>
-    <script src="/scripts/app.js"></script>
+    <script src="/scripts/featured.js"></script>
   </body>
 </html>

@@ -34,16 +34,7 @@ app.get("/home.html", function(req, res) {
 app.get("/about.html", function(req, res) {
   res.sendFile("views/about.html", { root: __dirname });
 });
-app.get("/api/cities", (req, res) => {
-  db.Cities.find().exec(function(err, cities) {
-    if (err) {
-      console.log("index error: " + err);
-      res.sendStatus(500);
-    } else {
-      res.json(cities);
-    }
-  });
-});
+
 app.get("/api/places", (req, res) => {
   db.Places.find().exec(function(err, places) {
     if (err) {
@@ -56,19 +47,22 @@ app.get("/api/places", (req, res) => {
 });
 app.get("/api/places/featured", (req, res) => {
   db.Places.find().exec(function(err, places) {
+    var featPlaces =[];
     if (err) {
       console.log("index error: " + err);
       res.sendStatus(500);
-    } else {
-      places.forEach(featPlace => {
-        if(featPlace.isFeatured == true){
-          console.log(featPlace);
-          
-        };
-        res.json(places)
-      });
-      
     }
+      places.forEach(featPlace => {
+        if(featPlace.isFeatured){
+          featPlaces.push(featPlace)
+        } 
+        
+      });
+      console.log(featPlaces);
+      res.json(featPlaces) 
+      
+      
+    
   });
 });
 
