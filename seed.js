@@ -56,7 +56,43 @@ var people_list = [
     photo: "https://upload.wikimedia.org/wikipedia/commons/7/70/Pinkman.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true
-  }
+  },
+  {
+    name: "Green Man",
+    description:
+      "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
+    city: "Berkeley",
+    photo: "https://media.giphy.com/media/eUoGmTHkmGv72/giphy.gif",
+    url: "https://en.wikipedia.org/wiki/Pink_Man",
+    isAlive: true
+  },
+  {
+    name: "Orange Man",
+    description:
+      "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
+    city: "Berkeley",
+    photo: "https://cdn-images-1.medium.com/max/1600/1*mI7YNvyBsT6ZtTks3TaaKg.jpeg",
+    url: "https://en.wikipedia.org/wiki/Pink_Man",
+    isAlive: true
+  },
+  {
+    name: "Red Man",
+    description:
+      "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
+    city: "Berkeley",
+    photo: "https://pbs.twimg.com/profile_images/1035390955011026946/-VTnbCes_400x400.jpg",
+    url: "https://en.wikipedia.org/wiki/Pink_Man",
+    isAlive: true
+  },
+  {
+    name: "Blue Man",
+    description:
+      "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
+    city: "Berkeley",
+    photo: "https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2015/04/0415_bluemangroup_oneuseonly.jpg",
+    url: "https://en.wikipedia.org/wiki/Pink_Man",
+    isAlive: true
+  },
 ];
 
 simpleCreate(db.People, people_list, "people");

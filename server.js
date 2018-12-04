@@ -6,6 +6,8 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   db = require("./models"),
   ctrl = require('./controllers')
+  
+
 
 // generate a new express app and call it 'app'
 const app = express();
