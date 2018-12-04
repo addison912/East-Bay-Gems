@@ -53,12 +53,7 @@ function placeSuccess(places) {
                       <p>Info</p>
                     </div>
                 </div>`;
-<<<<<<< HEAD
     $('#gems').append(cardHtml)
-=======
-
-    $("#gems").append(cardHtml);
->>>>>>> 37fb11420d57f54e90ed8aa3fb27beeb8c383431
     document
       .getElementById(`${placeId}`)
       .querySelector(".card-image").style.backgroundImage = `url("${image}")`;

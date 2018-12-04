@@ -55,12 +55,19 @@ app.get("/api/places", (req, res) => {
   });
 });
 app.get("/api/places/featured", (req, res) => {
-  db.Places.find({featured: true}).exec(function(err, places) {
+  db.Places.find().exec(function(err, places) {
     if (err) {
       console.log("index error: " + err);
       res.sendStatus(500);
     } else {
-      res.json(places);
+      places.forEach(featPlace => {
+        if(featPlace.isFeatured == true){
+          console.log(featPlace);
+          
+        };
+        res.json(places)
+      });
+      
     }
   });
 });
