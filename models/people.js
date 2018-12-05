@@ -8,7 +8,8 @@ var PeopleSchema = new Schema({
   photo: String,
   url: String,
   isAlive: Boolean,
-  isFeatured: Boolean
+  isFeatured: Boolean,
+  gem: String
 });
 
 var People = mongoose.model("People", PeopleSchema);

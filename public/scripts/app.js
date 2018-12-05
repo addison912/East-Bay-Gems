@@ -1,19 +1,53 @@
-var frontPage = []
+var results = []
 var allPlaces;
 var allPeople;
 
+var checkHidden = function(){
+  if ($('#places').is(':checked') && $('#people').is(':checked')){
+    $('.place').removeClass('hide')
+    $('.person').removeClass('hide')
+    console.log('this work');
+  }
+  else if (!$('#places').is(':checked') && !$('#people').is(':checked')){
+    $('.place').removeClass('hide')
+    $('.person').removeClass('hide')
+    console.log('this work');
+  }
+  else if (!$('#places').is(':checked') && $('#people').is(':checked')){
+    $('.place').addClass('hide')
+    $('.person').removeClass('hide')
+  }else if ($('#places').is(':checked') && !$('#people').is(':checked')){
+    $('.person').addClass('hide')
+    $('.place').removeClass('hide')
+  }
 
+
+
+}
 $(document).ready(function() {
   
   console.log("Sanity check");
   $(".modal").modal();
   $(".slider").slider({
     height: 800
-  });
+  })
   $("select").formSelect();
   $("#places").on("click", function() {
-  $("#places_menu").toggleClass("hide");
+    /* $("#places_menu").toggleClass("hide");
+    $(".person").toggleClass("hide"); */
+    checkHidden();
+    
+
+    
   });
+  $("#people").on("click", function(){
+    /* $(".place").toggleClass("hide"); */
+    checkHidden();
+
+    
+  })
+  
+  
 
 $.ajax({
   method: "GET",
@@ -58,7 +92,7 @@ $("#newPlaceForm").on("submit", function(e) {
   }
 
 });
-
+console.log(results);
 });
 
 let shuffle = (array) => {
@@ -81,12 +115,12 @@ let shuffle = (array) => {
 
 
 
+
 let populate = () =>{
   gems = allPeople.concat(allPlaces);
-  let results = shuffle(gems);
+  results = shuffle(gems);
   results.forEach(gem => {
-    console.log(gem);
-    cardHtml = `<div class="card small horizontal hoverable" id=${gem._id}>
+    cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image waves-effect waves-block waves-light">
                   </div>
                   <div class="card-stacked">

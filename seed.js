@@ -9,7 +9,9 @@ var places_list = [
     city: "Albany",
     photo: "https://i.imgur.com/vkPLCG7.jpg",
     url: "https://en.wikipedia.org/wiki/Albany_Bulb",
-    coordinates: { lat: 37.5324, lng: -122.1929 }
+    coordinates: { lat: 37.5324, lng: -122.1929 },
+    isFeatured: false,
+    gem: 'place'
   },
   {
     name: "The Alley",
@@ -21,7 +23,8 @@ var places_list = [
       "https://assets.simpleviewcms.com/simpleview/image/fetch/c_limit,q_80,w_1200/https://res.cloudinary.com/simpleview/image/upload/crm/oakland/Screen-Shot-2018-05-30-at-11.02.22-AM-f6196db25056a36_f61c024c-5056-a36f-23e7a8124717b481.png",
     url: "https://www.thealleyoakland.com/",
     coordinates: { lat: 37.813141, lng: -122.247166 },
-    isFeatured: true
+    isFeatured: true,
+    gem: 'place'
   },
   {
     name: "Warehouse Cafe",
@@ -32,7 +35,9 @@ var places_list = [
     photo:
       "http://storage.googleapis.com/zagat-article-ss/Port_Costa_Warehouse-Virginia_Miller.jpg?h=646&w=646&auto=format",
     url: "http://www.warehousecafeportcosta.com/",
-    coordinates: { lat: 38.04644, lng: -122.18327 }
+    coordinates: { lat: 38.04644, lng: -122.18327 },
+    isFeatured: true,
+    gem: 'place'
   },
   {
     name: "Claremont Canyon Regional Preserve",
@@ -43,7 +48,8 @@ var places_list = [
     photo: "https://i.imgur.com/Zc0GPoY.jpg",
     url: "https://en.wikipedia.org/wiki/Claremont_Canyon_Regional_Preserve",
     coordinates: { lat: 37.8659, lng: -122.2365 },
-    isFeatured: true
+    isFeatured: true,
+    gem: 'place'
   }
 ];
 
@@ -55,7 +61,8 @@ var people_list = [
     city: "Berkeley",
     photo: "https://upload.wikimedia.org/wikipedia/commons/7/70/Pinkman.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
-    isAlive: true
+    isAlive: true,
+    gem: 'person'
   },
   {
     name: "Green Man",
@@ -64,7 +71,8 @@ var people_list = [
     city: "Berkeley",
     photo: "https://media.giphy.com/media/eUoGmTHkmGv72/giphy.gif",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
-    isAlive: true
+    isAlive: true,
+    gem: 'person'
   },
   {
     name: "Orange Man",
@@ -73,7 +81,8 @@ var people_list = [
     city: "Berkeley",
     photo: "https://cdn-images-1.medium.com/max/1600/1*mI7YNvyBsT6ZtTks3TaaKg.jpeg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
-    isAlive: true
+    isAlive: true,
+    gem: 'person'
   },
   {
     name: "Red Man",
@@ -82,7 +91,8 @@ var people_list = [
     city: "Berkeley",
     photo: "https://pbs.twimg.com/profile_images/1035390955011026946/-VTnbCes_400x400.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
-    isAlive: true
+    isAlive: true,
+    gem: 'person'
   },
   {
     name: "Blue Man",
@@ -91,7 +101,8 @@ var people_list = [
     city: "Berkeley",
     photo: "https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2015/04/0415_bluemangroup_oneuseonly.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
-    isAlive: true
+    isAlive: true,
+    gem: 'person'
   },
 ];
 

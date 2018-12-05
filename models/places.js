@@ -9,7 +9,8 @@ var PlacesSchema = new Schema({
   photo: String,
   url: String,
   coordinates: { lat: Number, lng: Number },
-  isFeatured: Boolean
+  isFeatured: Boolean,
+  gem: String
 });
 
 var Places = mongoose.model("Places", PlacesSchema);
