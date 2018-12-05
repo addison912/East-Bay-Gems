@@ -1,5 +1,6 @@
 let currentUser = {};
 
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   let userData = {
@@ -65,6 +66,7 @@ function onSignIn(googleUser) {
 
 function onSuccess(googleUser) {
   console.log("Logged in as: " + googleUser.getBasicProfile().getName());
+  console.log(googleUser.getBasicProfile());
 }
 function onFailure(error) {
   console.log(error);

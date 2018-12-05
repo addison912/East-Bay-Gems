@@ -96,3 +96,8 @@ li.indicator-item.active {
   position: absolute;
   top: 100px;
 }
+
+.fab{
+  color: grey;
+  margin: 8px;
+}
