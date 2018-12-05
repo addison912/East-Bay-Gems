@@ -1,9 +1,58 @@
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log("Name: " + profile.getName());
-  console.log("Image URL: " + profile.getImageUrl());
-  console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+  let userData = {
+    username: profile.getName(),
+    uid: profile.getId(),
+    email: profile.getEmail(),
+    fullName: profile.getName(),
+    imageUrl: profile.getImageUrl(),
+    likes: [],
+    posts: []
+  };
+
+  userData = JSON.stringify(userData);
+
+  checkForUser(profile.getId());
+
+  function checkForUser(id) {
+    $.ajax({
+      method: "GET",
+      url: `/api/users/${id}`,
+      success: userSuccess,
+      error: userError
+    });
+  }
+  function userSuccess(user) {
+    if (user) {
+      console.log(user.username + " already exists");
+    } else {
+      createNewUser(userData);
+      console.log("creating new user: " + profile.getName());
+    }
+  }
+  function userError() {
+    console.log("error retrieving user data");
+  }
+
+  function createNewUser(userData) {
+    $.ajax({
+      method: "POST",
+      url: "/api/users",
+      contentType: "application/json",
+      data: userData,
+      dataType: "json",
+      success: createUserSuccess,
+      error: createUserError
+    });
+  }
+  function createUserSuccess(user) {
+    console.log("created new user");
+  }
+  function createUserError() {
+    console.log("unable to create a new user");
+  }
+
+  //hide login button and replace it with user profile pic
   $("#sign-in-button").toggleClass("hide");
   $("#nav-profile-pic").toggleClass("hide");
   document.getElementById(

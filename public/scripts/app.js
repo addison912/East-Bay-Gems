@@ -6,11 +6,9 @@ var checkHidden = function() {
   if ($("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-    
   } else if (!$("#places").is(":checked") && !$("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-   
   } else if (!$("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").addClass("hide");
     $(".person").removeClass("hide");
@@ -18,8 +16,7 @@ var checkHidden = function() {
     $(".person").addClass("hide");
     $(".place").removeClass("hide");
   }
-  
-}
+};
 $(document).ready(function() {
   console.log("Sanity check");
   $(".modal").modal();
@@ -38,10 +35,10 @@ $(document).ready(function() {
     if ($(this).val() == "place") {
       $("#submitPlace").removeClass("hide");
       $("#submitPerson").addClass("hide");
-
-    }if ($(this).val() == "person") {
+    }
+    if ($(this).val() == "person") {
       $("#submitPerson").removeClass("hide");
-      $("#submitPlace").addClass("hide")
+      $("#submitPlace").addClass("hide");
     }
   });
 
@@ -51,7 +48,6 @@ $(document).ready(function() {
     success: placeSuccess,
     error: placeError
   });
-
   function placeSuccess(places) {
     allPlaces = places;
     $.ajax({
@@ -64,8 +60,8 @@ $(document).ready(function() {
   function peopleSuccess(people) {
     allPeople = people;
     populate();
+    console.log(results);
   }
-
   function placeError() {
     console.log("error");
   }
@@ -75,6 +71,8 @@ $(document).ready(function() {
   function peopleError() {
     console.log("error");
   }
+
+  // post new place
   $("#newPlaceForm").on("submit", function(e) {
     $.ajax({
       method: "POST",

@@ -1,8 +1,8 @@
-const db = require('../models')
+const db = require("../models");
 
 module.exports = {
-//get all places
-  index:  (req, res) => {
+  //get all places
+  index: (req, res) => {
     db.Places.find().exec(function(err, places) {
       if (err) {
         console.log("index error: " + err);
@@ -39,6 +39,7 @@ module.exports = {
       res.json(featured);
     });
   },
+
   //create a place
   create: (req, res) => {
     var newPlace = new db.Places({
@@ -58,6 +59,7 @@ module.exports = {
       console.log("created ", place.name);
     });
   },
+
   //delete a place
   delete: (req, res) => {
     // get place id from url params (`req.params`)
@@ -89,4 +91,4 @@ module.exports = {
       }
     );
   }
-}
+};

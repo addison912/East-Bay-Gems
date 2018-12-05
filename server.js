@@ -5,13 +5,10 @@
 const express = require("express"),
   bodyParser = require("body-parser"),
   db = require("./models"),
-  ctrl = require('./controllers')
-  
-
+  ctrl = require("./controllers");
 
 // generate a new express app and call it 'app'
 const app = express();
-
 
 // serve static files in public
 app.use(express.static("public"));
@@ -38,6 +35,7 @@ app.get("/profile.html", function(req, res) {
   res.sendFile("views/profile.html", { root: __dirname });
 });
 
+//////////// People ////////////
 
 //get all people
 app.get("/api/people", ctrl.People.index);
@@ -62,6 +60,14 @@ app.delete("/api/places/:id", ctrl.Places.delete);
 
 // update place
 app.put("/api/places/:id", ctrl.Places.update);
+
+//////////// Users ////////////
+
+// get user by uid
+app.get("/api/users/:uid", ctrl.Users.getByUid);
+
+//create a new user
+app.post("/api/users", ctrl.Users.createUser);
 
 //run server
 let port = process.env.PORT || 3000;
