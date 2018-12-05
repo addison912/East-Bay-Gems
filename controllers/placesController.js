@@ -47,7 +47,8 @@ module.exports = {
       description: req.body.description,
       city: req.body.city,
       url: req.body.url,
-      photo: req.body.photo
+      photo: req.body.photo,
+      gem: req.body.gem
     });
     console.log(req.body.city);
     newPlace.save(function(err, place) {

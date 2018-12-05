@@ -35,13 +35,17 @@ $(document).ready(function() {
   $("#places").on("click", function() {
     $('#places_menu').toggleClass('hide');
     checkHidden();
-    
-
-    
   });
   $("#people").on("click", function(){
     checkHidden();
   })
+  $('#gemSelector').change(function() {
+    if ($(this).val() == 'place'){
+      $('#submitPlace').removeClass('hide')
+    } else {
+      $('#submitPerson').removeClass('hide')
+    }
+});
 
 $.ajax({
   method: "GET",
@@ -82,6 +86,19 @@ $("#newPlaceForm").on("submit", function(e) {
   });
 
   function newPlaceSuccess(json) {
+    console.log(json);
+  }
+
+});
+$("#newPersonForm").on("submit", function(e) {
+  $.ajax({
+    method: "POST",
+    url: "/api/people",
+    data: $(this).serialize(),
+    success: newPersonSuccess
+  });
+
+  function newPersonSuccess(json) {
     console.log(json);
   }
 

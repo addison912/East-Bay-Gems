@@ -82,46 +82,106 @@
         </div>
       </div>
       <!-- Sign in end -->
-
+      <!-- Submit Post -->
       <div id="submit-new" class="modal">
         <div class="modal-content">
           <div class="row">
-            <form id='newPlaceForm' class="col s12">
-              <div class="input-field col s12">
-                <select name="city">
-                  <option value="" disabled selected>Choose City</option>
-                  <option  value="Berkeley">Berkeley</option>
-                  <option value="Oakland">Oakland</option>
-                  <option value="Emeryville">Emeryville</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="row">
-                <div class="input-field col s6">
-                  <input placeholder="Name of Gem" name="name" type="text">
-                </div>
-                <div class="input-field col s6">
-                  <input placeholder="Park, Bar, Retaurant..." name="type" type="text">
-                </div>
-              </div>  
-              <div class="row">
+            <div>
+              <form class="col s12">
+                <!-- Select Person or Place -->
                 <div class="input-field col s12">
-                  <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
+                  <select id="gemSelector" name="gemSelector">
+                    <option value="" disabled selected>What would you like to submit?</option>
+                    <option  value="place">Place</option>
+                    <option  value="person">Person</option>
+                  </select>
                 </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <input name="photo" placeholder="Image URL" type="text">
+              </form>
+            </div>
+            <!-- Submit Place -->
+            <div id="submitPlace" class="hide">
+              <form id='newPlaceForm' class="col s12">
+                <div class="input-field col s12">
+                  <select name="city">
+                    <option value="" disabled selected>Choose City</option>
+                    <option  value="Berkeley">Berkeley</option>
+                    <option value="Oakland">Oakland</option>
+                    <option value="Emeryville">Emeryville</option>
+                  </select>
                 </div>
-                <div class="input-field col s6">
-                  <input name="url" placeholder="Website" type="text">
+                <div class="row">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Name of Place" name="name" type="text">
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Park, Bar, Retaurant..." name="type" type="text">
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="gem" name="gem" placeholder="person or place" type="text" >
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input name="photo" placeholder="Image URL" type="text">
+                    </div>
+                    <div class="input-field col s6">
+                      <input name="url" placeholder="Website" type="text">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                  </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                  <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
-              </div>
-            </form>
+              </form>
+            </div>
+            <!-- Submit Person -->
+            <div id="submitPerson" class="hide">
+                <form id='newPersonForm' class="col s12">
+                    <div class="input-field col s12">
+                      <select name="city">
+                        <option value="" disabled selected>Where do they hang out?</option>
+                        <option  value="Berkeley">Berkeley</option>
+                        <option value="Oakland">Oakland</option>
+                        <option value="Emeryville">Emeryville</option>
+                      </select>
+                    </div>
+                    <div class="row">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input placeholder="Name of Person" name="name" type="text">
+                        </div>
+                        <div class="input-field col s6">
+                          <input placeholder="true or false" name="isAl;ive" type="text">
+                        </div>
+                      </div>  
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="gem" name="gem" placeholder="person or place" type="text" >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input name="photo" placeholder="Image URL" type="text">
+                        </div>
+                        <div class="input-field col s6">
+                          <input name="url" placeholder="Website" type="text">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
           </div>
         </div>
       </div>
