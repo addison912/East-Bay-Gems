@@ -42,9 +42,9 @@ $(document).ready(function() {
       $("#submitPlace").addClass("hide");
     }
   });
-  $('#like-button').on('click', function(){
-    console.log('hello');
-  })
+
+
+  
   
   $.ajax({
     method: "GET",
@@ -101,7 +101,13 @@ $(document).ready(function() {
       console.log(json);
     }
   });
+
+  $('#gems').on('click', '.halfway-fab', function(){
+    let gem = this.name
+    console.log(gem);
+  })
 });
+
 
 let shuffle = array => {
   var m = array.length,
@@ -127,17 +133,18 @@ let populate = () => {
   results = shuffle(gems);
   results.forEach(gem => {
     cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
-                  <div class="card-image waves-effect waves-block waves-light">
+                  <div class="card-image">
                   </div>
                   <div class="card-stacked">
                     <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                       <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
                         gem.name
-                      } - ${gem.city} - ${gem.type} </span>
+                      } - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
                       <a href="${gem.url}">More info</a>
+                
                     </div>
                   </div>
                   <div class="card-reveal col l4">

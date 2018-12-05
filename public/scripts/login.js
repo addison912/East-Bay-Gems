@@ -25,6 +25,7 @@ function onSignIn(googleUser) {
   function userSuccess(user) {
     if (user) {
       console.log(user.username + " already exists");
+      console.log(user.uid);
     } else {
       createNewUser(userData);
       console.log("creating new user: " + profile.getName());
