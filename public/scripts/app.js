@@ -25,6 +25,7 @@ $(document).ready(function() {
   });
   $('.fixed-action-btn').floatingActionButton();
   $("select").formSelect();
+  $('.sidenav').sidenav();
   $("#places").on("click", function() {
     $("#places_menu").toggleClass("hide");
     checkHidden();
@@ -106,6 +107,16 @@ $(document).ready(function() {
     let gem = this.name
     console.log(gem);
   })
+
+  
+    $("#search").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      
+      $("#gems .card").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+
 });
 
 

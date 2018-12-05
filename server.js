@@ -43,6 +43,7 @@ app.get("/api/people", ctrl.People.index);
 //create a person
 app.post("/api/people", ctrl.People.create);
 
+////////////Places//////////////////
 //get all places
 app.get("/api/places", ctrl.Places.index);
 
