@@ -33,21 +33,15 @@ $(document).ready(function() {
   })
   $("select").formSelect();
   $("#places").on("click", function() {
-    /* $("#places_menu").toggleClass("hide");
-    $(".person").toggleClass("hide"); */
+    $('#places_menu').toggleClass('hide');
     checkHidden();
     
 
     
   });
   $("#people").on("click", function(){
-    /* $(".place").toggleClass("hide"); */
     checkHidden();
-
-    
   })
-  
-  
 
 $.ajax({
   method: "GET",
@@ -92,7 +86,7 @@ $("#newPlaceForm").on("submit", function(e) {
   }
 
 });
-console.log(results);
+
 });
 
 let shuffle = (array) => {
