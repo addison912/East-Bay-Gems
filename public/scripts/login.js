@@ -40,7 +40,7 @@ function signOut() {
 function checkForUser(id) {
   $.ajax({
     method: "GET",
-    url: "/api/users/:id",
+    url: `/api/users/${id}`,
     success: userSuccess,
     error: userError
   });
@@ -49,7 +49,7 @@ function checkForUser(id) {
 function userSuccess(user) {
   console.log("retrieved user data:" + user);
 }
-function placeError() {
+function userError() {
   console.log("error retrieving user data");
 }
 

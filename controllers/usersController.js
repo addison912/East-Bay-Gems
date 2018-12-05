@@ -10,5 +10,25 @@ module.exports = {
       }
       res.json(foundUser);
     });
+  },
+
+  // create user
+  createUser: (req, res) => {
+    var newUser = new db.Users({
+      username: req.body.username,
+      uid: req.body.uid,
+      email: req.body.email,
+      fullName: req.body.fullName,
+      imageUrl: req.body.imageUrl,
+      likes: [],
+      posts: []
+    });
+    newUser.save(function(err, newUser) {
+      if (err) {
+        return console.log("create error: " + err);
+      }
+      console.log("created ", newUser.fullName);
+      res.json(newUser);
+    });
   }
 };

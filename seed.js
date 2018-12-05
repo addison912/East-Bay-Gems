@@ -71,7 +71,8 @@ var people_list = [
     description:
       "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
     city: "Berkeley",
-    photo: "https://cdn-images-1.medium.com/max/1600/1*mI7YNvyBsT6ZtTks3TaaKg.jpeg",
+    photo:
+      "https://cdn-images-1.medium.com/max/1600/1*mI7YNvyBsT6ZtTks3TaaKg.jpeg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true
   },
@@ -80,7 +81,8 @@ var people_list = [
     description:
       "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
     city: "Berkeley",
-    photo: "https://pbs.twimg.com/profile_images/1035390955011026946/-VTnbCes_400x400.jpg",
+    photo:
+      "https://pbs.twimg.com/profile_images/1035390955011026946/-VTnbCes_400x400.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true
   },
@@ -89,14 +91,28 @@ var people_list = [
     description:
       "Pink Man (real name Michael Maxfield) is a local celebrity from the San Francisco Bay Area. He can be seen riding his unicycle around the cities of Berkeley, Oakland and San Francisco. He gets his name from the shocking pink unitard and cape he wears while he performs impromptu unicycle tricks in public places—spinning, engaging in sudden stops, riding down the street at high speeds, and carrying people on his back",
     city: "Berkeley",
-    photo: "https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2015/04/0415_bluemangroup_oneuseonly.jpg",
+    photo:
+      "https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2015/04/0415_bluemangroup_oneuseonly.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true
-  },
+  }
+];
+
+var user_list = [
+  {
+    username: "addison",
+    uid: "123",
+    imageUrl: "https://i.imgur.com/7f07mYf.png",
+    fullName: "Addison moore",
+    email: "addisondrewmoore@gmail.com",
+    posts: [],
+    likes: []
+  }
 ];
 
 simpleCreate(db.People, people_list, "people");
 simpleCreate(db.Places, places_list, "places");
+simpleCreate(db.Users, user_list, "users");
 
 function simpleCreate(DB, object_list, name) {
   DB.deleteMany({}, (err, objects) => {

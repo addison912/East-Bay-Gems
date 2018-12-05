@@ -60,6 +60,14 @@ app.delete("/api/places/:id", ctrl.Places.delete);
 // update place
 app.put("/api/places/:id", ctrl.Places.update);
 
+//////////// Users ////////////
+
+// get user by uid
+app.get("/api/users/:uid", ctrl.Users.getByUid);
+
+//create a new user
+app.post("/api/users", ctrl.Users.createUser);
+
 //run server
 let port = process.env.PORT || 3000;
 app.listen(port, function() {

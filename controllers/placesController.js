@@ -39,6 +39,7 @@ module.exports = {
       res.json(featured);
     });
   },
+
   //create a place
   create: (req, res) => {
     var newPlace = new db.Places({
@@ -47,7 +48,8 @@ module.exports = {
       description: req.body.description,
       city: req.body.city,
       url: req.body.url,
-      photo: req.body.photo
+      photo: req.body.photo,
+      gem: req.body.gem
     });
     console.log(req.body.city);
     newPlace.save(function(err, place) {
@@ -57,6 +59,7 @@ module.exports = {
       console.log("created ", place.name);
     });
   },
+
   //delete a place
   delete: (req, res) => {
     // get place id from url params (`req.params`)
