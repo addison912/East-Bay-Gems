@@ -82,6 +82,9 @@ li.indicator-item.active {
 
 .modal {
   width: 70% !important ;
-  height: 100% !important ;
+  min-height: 60% !important ;
 }
 /*# sourceMappingURL=main.css.map */
+.halfway-fab{
+  top: 252px;
+}

@@ -9,7 +9,8 @@ var PeopleSchema = new Schema({
   url: String,
   isAlive: Boolean,
   isFeatured: Boolean,
-  gem: String
+  gem: String,
+  numOfLikes: Number
 });
 
 var People = mongoose.model("People", PeopleSchema);

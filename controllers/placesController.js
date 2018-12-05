@@ -32,7 +32,6 @@ module.exports = {
       }
       places.forEach(featPlace => {
         if (featPlace.isFeatured) {
-          console.log(featPlace);
           featured.push(featPlace);
         }
       });
@@ -48,9 +47,8 @@ module.exports = {
       city: req.body.city,
       url: req.body.url,
       photo: req.body.photo,
-      gem: req.body.gem
+      gem: req.body.gem,
     });
-    console.log(req.body.city);
     newPlace.save(function(err, place) {
       if (err) {
         console.log("create error: " + err);

@@ -6,11 +6,9 @@ var checkHidden = function() {
   if ($("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-    
   } else if (!$("#places").is(":checked") && !$("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-   
   } else if (!$("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").addClass("hide");
     $(".person").removeClass("hide");
@@ -20,12 +18,15 @@ var checkHidden = function() {
   }
   
 }
+
+
 $(document).ready(function() {
   console.log("Sanity check");
   $(".modal").modal();
   $(".slider").slider({
     height: 800
   });
+  $('.fixed-action-btn').floatingActionButton();
   $("select").formSelect();
   $("#places").on("click", function() {
     $("#places_menu").toggleClass("hide");
@@ -44,7 +45,10 @@ $(document).ready(function() {
       $("#submitPlace").addClass("hide")
     }
   });
-
+  $('#like-button').on('click', function(){
+    console.log('hello');
+  })
+  
   $.ajax({
     method: "GET",
     url: "/api/places",
@@ -124,16 +128,14 @@ let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    cardHtml = `<div attr="${gem.city}" class="${
-      gem.gem
-    } card small horizontal hoverable" id=${gem._id}>
+    cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image waves-effect waves-block waves-light">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content">
+                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                       <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
                         gem.name
-                      } - ${gem.city} </span>
+                      } - ${gem.city} - ${gem.type} </span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
