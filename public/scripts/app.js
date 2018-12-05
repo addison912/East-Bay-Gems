@@ -18,7 +18,8 @@ var checkHidden = function() {
     $(".person").addClass("hide");
     $(".place").removeClass("hide");
   }
-};
+  
+}
 $(document).ready(function() {
   console.log("Sanity check");
   $(".modal").modal();
@@ -133,7 +134,7 @@ let populate = () => {
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
-                      <a href="${gem.photo}">More info</a>
+                      <a href="${gem.url}">More info</a>
                     </div>
                   </div>
                   <div class="card-reveal col l4">
