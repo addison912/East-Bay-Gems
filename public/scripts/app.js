@@ -25,6 +25,7 @@ $(document).ready(function() {
   });
   $(".fixed-action-btn").floatingActionButton();
   $("select").formSelect();
+  $(".sidenav").sidenav();
   $("#places").on("click", function() {
     $("#places_menu").toggleClass("hide");
     checkHidden();
@@ -101,6 +102,26 @@ $(document).ready(function() {
       console.log(json);
     }
   });
+
+  $("#gems").on("click", ".halfway-fab", function() {
+    let gem = this.name;
+    console.log(gem);
+  });
+
+  $("#search").on("keyup", function() {
+    var value = $(this)
+      .val()
+      .toLowerCase();
+
+    $("#gems .card").filter(function() {
+      $(this).toggle(
+        $(this)
+          .text()
+          .toLowerCase()
+          .indexOf(value) > -1
+      );
+    });
+  });
 });
 
 let shuffle = array => {
@@ -137,11 +158,12 @@ let populate = () => {
                     }" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                       <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
                         gem.name
-                      } - ${gem.city} - ${gem.type} </span>
+                      } - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
                       <a href="${gem.url}">More info</a>
+                
                     </div>
                   </div>
                   <div class="card-reveal col l4">

@@ -28,10 +28,12 @@
       <nav class="blue-grey darken-1">
         <div class="nav-wrapper">
           <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
+          
+          
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/home.html">Browse</a></li>
             <li><a href="/home.html">Random</a></li>
-            <li><a href="/home.html">Search</a></li>
+            
             <li><a href="/about.html">About</a></li>
             <li id="sign-in-button">
                 <a
@@ -203,14 +205,25 @@
           <div id="gems" class="col m12 l9">
           
           
-          </div>
+          
 
+          </div>
           <!-- Results Filter -->
           <div id="sidebar" class="col l3">
             <ul class="collection with-header">
               <li class="collection-header">
                 <h5>Filter Results</h5>
               </li>
+              <li class="search collection-item">
+                <div class="search-wrapper focused">
+                  <input id="search" placeholder="Search">
+                  <i id="searchicon" class="material-icons">search</i>
+  
+
+                </div>
+                  
+              </li>
+              
               <li class="collection-item">
                 <h6>What are you looking for?</h6>
                 <form action="#">
@@ -266,11 +279,6 @@
                   <p>
                     <label>
                       <input type="checkbox"/><span>Restaurant</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"/><span>Person</span>
                     </label>
                   </p>
                 </form>
