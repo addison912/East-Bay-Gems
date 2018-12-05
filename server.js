@@ -5,13 +5,10 @@
 const express = require("express"),
   bodyParser = require("body-parser"),
   db = require("./models"),
-  ctrl = require('./controllers')
-  
-
+  ctrl = require("./controllers");
 
 // generate a new express app and call it 'app'
 const app = express();
-
 
 // serve static files in public
 app.use(express.static("public"));
@@ -38,12 +35,15 @@ app.get("/profile.html", function(req, res) {
   res.sendFile("views/profile.html", { root: __dirname });
 });
 
+//////////// People ////////////
 
 //get all people
 app.get("/api/people", ctrl.People.index);
 
+//////////// Places ////////////
+
 //get all places
-app.get('/api/places', ctrl.Places.index);
+app.get("/api/places", ctrl.Places.index);
 
 // get featured places
 app.get("/api/places/featured", ctrl.Places.indexFeat);

@@ -37,5 +37,21 @@ function signOut() {
   });
 }
 
+function checkForUser(id) {
+  $.ajax({
+    method: "GET",
+    url: "/api/users/:id",
+    success: userSuccess,
+    error: userError
+  });
+}
+
+function userSuccess(user) {
+  console.log("retrieved user data:" + user);
+}
+function placeError() {
+  console.log("error retrieving user data");
+}
+
 $(".dropdown-trigger").dropdown({ constrainWidth: false });
 $(".modal").modal();
