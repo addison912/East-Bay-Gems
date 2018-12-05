@@ -66,8 +66,11 @@ app.put("/api/places/:id", ctrl.Places.update);
 // get user by uid
 app.get("/api/users/:uid", ctrl.Users.getByUid);
 
-//create a new user
+// create a new user
 app.post("/api/users", ctrl.Users.createUser);
+
+// update user
+app.put("/api/users/:uid", ctrl.Users.update);
 
 //run server
 let port = process.env.PORT || 3000;
