@@ -6,11 +6,11 @@ var checkHidden = function() {
   if ($("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-    console.log("this work");
+    
   } else if (!$("#places").is(":checked") && !$("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".person").removeClass("hide");
-    console.log("this work");
+   
   } else if (!$("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").addClass("hide");
     $(".person").removeClass("hide");
@@ -37,8 +37,11 @@ $(document).ready(function() {
   $("#gemSelector").change(function() {
     if ($(this).val() == "place") {
       $("#submitPlace").removeClass("hide");
-    } else {
+      $("#submitPerson").addClass("hide");
+
+    }if ($(this).val() == "person") {
       $("#submitPerson").removeClass("hide");
+      $("#submitPlace").addClass("hide")
     }
   });
 

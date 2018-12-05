@@ -80,4 +80,8 @@ li.indicator-item.active {
   width: 100px;
 }
 
+.modal {
+  width: 70% !important ;
+  height: 100% !important ;
+}
 /*# sourceMappingURL=main.css.map */

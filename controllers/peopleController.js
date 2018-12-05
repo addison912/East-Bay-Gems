@@ -12,7 +12,7 @@ module.exports = {
     });
   },
   create: (req, res) => {
-    var newPlace = new db.Places({
+    var newPerson = new db.People({
       name: req.body.name,
       description: req.body.description,
       city: req.body.city,
@@ -22,12 +22,12 @@ module.exports = {
       isFeatured: req.body.isFeatured,
       gem: req.body.gem
     });
-    console.log(req.body.city);
-    newPlace.save(function(err, place) {
+    
+    newPerson.save(function(err, person) {
       if (err) {
         console.log("create error: " + err);
       }
-      console.log("created ", place.name);
+      console.log("created ", person.name);
     });
   }
 }
