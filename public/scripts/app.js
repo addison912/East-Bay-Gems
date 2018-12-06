@@ -110,15 +110,16 @@ $(document).ready(function() {
     let gem = this.name;
     let likes;
     likes = user.likes;
-    console.log(typeof user.likes);
 
     if (!likes.includes(gem)) {
       likes.push(gem);
-      let userLikes = { likes: likes };
-      let stringifiedLikes = JSON.stringify(userLikes);
+      console.log(user.likes);
+
+      let stringifiedLikes = JSON.stringify({ likes: likes });
       $.ajax({
         method: "PUT",
         url: `/api/users/${user.uid}`,
+        contentType: "application/json",
         data: stringifiedLikes,
         dataType: "json",
         success: updateUserSuccess,

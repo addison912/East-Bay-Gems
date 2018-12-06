@@ -33,6 +33,7 @@ function getAll() {
     allPeople = people;
     let gems = allPeople.concat(allPlaces);
     gems = shuffle(gems);
+    console.log(gems);
   }
   function placeError() {
     console.log("error");
