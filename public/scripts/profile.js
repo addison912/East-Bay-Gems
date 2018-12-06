@@ -1,14 +1,12 @@
 let user;
+let gems = [];
 
 $(document).ready(function() {
   if (JSON.parse(sessionStorage.getItem("loggedIn"))) {
-    console.log("here");
     user = JSON.parse(sessionStorage.getItem("currentUser"));
   }
+  addProfileInfo();
   getAll();
-  user.posts.forEach(post => {
-    console.log(post);
-  });
 });
 
 function getAll() {
@@ -31,9 +29,9 @@ function getAll() {
   }
   function peopleSuccess(people) {
     allPeople = people;
-    let gems = allPeople.concat(allPlaces);
+    gems = allPeople.concat(allPlaces);
     gems = shuffle(gems);
-    console.log(gems);
+    addPosts();
   }
   function placeError() {
     console.log("error");
@@ -59,3 +57,45 @@ let shuffle = array => {
   }
   return array;
 };
+
+function addProfileInfo() {
+  $("#userImg").attr("src", `${user.imageUrl}`);
+  $("#userName").text(user.fullName);
+}
+
+function addPosts() {
+  user.posts.forEach(post => {
+    for (let i = 0; i < gems.length; i++) {
+      if (post == gems[i]._id) {
+        gem = gems[i];
+        cardHtml = `<div attr="${gem.city}" class="${
+          gem.gem
+        } card small horizontal hoverable" id=${gem._id}>
+                      <div class="card-image waves-effect waves-block waves-light">
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
+                            gem.name
+                          } - ${gem.city}</span>
+                          <p>${gem.description}</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="${gem.url}">More info</a>
+                        </div>
+                      </div>
+                      <div class="card-reveal col l4">
+                          <span class="card-title grey-text text-darken-4">Lat=, Lon=<i class="material-icons right">close</i></span>
+                          <p>Info</p>
+                        </div>
+                    </div>`;
+        $("#userPosts").append(cardHtml);
+        document
+          .getElementById(`${gem._id}`)
+          .querySelector(".card-image").style.backgroundImage = `url("${
+          gem.photo
+        }")`;
+      }
+    }
+  });
+}
