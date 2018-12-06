@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-let currentUser = {};
-
-
-=======
->>>>>>> 76532fac6963f0bd1b7f228a1ab67017bc1592af
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   let userData = {
