@@ -128,7 +128,6 @@ let shuffle = array => {
   var m = array.length,
     t,
     i;
-
   // While there remain elements to shuffle…
   while (m) {
     // Pick a remaining element…
@@ -139,7 +138,6 @@ let shuffle = array => {
     array[m] = array[i];
     array[i] = t;
   }
-
   return array;
 };
 
