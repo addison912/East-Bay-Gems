@@ -48,13 +48,14 @@ module.exports = {
       city: req.body.city,
       url: req.body.url,
       photo: req.body.photo,
-      gem: req.body.gem,
+      gem: req.body.gem
     });
     newPlace.save(function(err, place) {
       if (err) {
         console.log("create error: " + err);
       }
       console.log("created ", place.name);
+      res.json(place);
     });
   },
 
