@@ -17,7 +17,6 @@ $(document).ready(function() {
                       <h5 class="light grey-text text-lighten-3">${
                         featured.description
                       }</h5>
-                      <h6>Submited by user1</h6>
                     </div>
                   </li>`;
       $("#featured").append(featHtml);
