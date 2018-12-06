@@ -82,6 +82,7 @@ $(document).ready(function() {
   /////////// post new gem ///////////
   //post place
   $("#newPlaceForm").on("submit", function(e) {
+    e.preventDefault();
     $.ajax({
       method: "POST",
       url: "/api/places",
@@ -92,10 +93,12 @@ $(document).ready(function() {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
+      location.reload();
     }
   });
   //post new person
   $("#newPersonForm").on("submit", function(e) {
+    e.preventDefault();
     $.ajax({
       method: "POST",
       url: "/api/people",
@@ -107,6 +110,7 @@ $(document).ready(function() {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
+      location.reload();
     }
   });
 
@@ -168,12 +172,18 @@ let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
+    cardHtml = `<div attr="${gem.city}" class="${
+      gem.gem
+    } card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image waves-effect waves-block waves-light">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${gem.name} - ${gem.city}</span>
+                    <div class="card-content"><a name="${
+                      gem._id
+                    }" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
+                        gem.name
+                      } - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
@@ -192,7 +202,9 @@ let populate = () => {
       ////////resize photos//////////
       document
         .getElementById(`${gem._id}`)
-        .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
+        .querySelector(".card-image").style.backgroundImage = `url("${
+        gem.photo
+      }")`;
     }
   });
 };
