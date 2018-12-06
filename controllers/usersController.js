@@ -30,5 +30,21 @@ module.exports = {
       console.log("created ", newUser.fullName);
       res.json(newUser);
     });
+  },
+  //update user
+  update: (req, res) => {
+    // get user id from url params (`req.params`)
+    var uid = req.params.uid;
+    db.Users.findOneAndUpdate(
+      { uid: uid },
+      req.body,
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          return console.log(err);
+        }
+        res.json(updatedUser);
+      }
+    );
   }
 };

@@ -32,13 +32,19 @@
       integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous"
     />
+    <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon.png"
+    sizes="24x24"
+  />
 
     <title>About</title>
   </head>
   <body>
      <!-- Nav Bar -->
      <div class="navbar-fixed">
-        <nav class="blue-grey darken-1">
+        <nav class="transparent">
           <div class="nav-wrapper">
             <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -94,12 +100,18 @@
           </div>
         </div>
         <!-- Sign in end -->
+
+
     <div class="container">
       <div class="row section">
         <div class="col s12 m12 l12">
-          <div class="card-panel ">
-            <h2 id="username" class="header grey-text">Addison Moore</h2>
+          <div class="card-panel orange lighten-2">
+            <div class="profile">
+              <img id="userImg" src="" alt="">
+              <h3 id="userName" class="header black-text"></h2>
+            </div>
           </div>
+          <div id="userPosts"></div>
         </div>
       </div>
 
@@ -112,7 +124,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+    <script type="text/javascript" src="/scripts/profile.js"></script>
     <script type="text/javascript" src="/scripts/login.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
   </body>
 </html>

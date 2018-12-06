@@ -1,14 +1,14 @@
-const db = require('../models')
+const db = require("../models");
 
 module.exports = {
-//get all people
-  index:  (req, res) =>{
-    db.People.find().exec(function(err, people){
-      if (err){
+  //get all people
+  index: (req, res) => {
+    db.People.find().exec(function(err, people) {
+      if (err) {
         console.log(err);
       } else {
-        res.json(people)
-      };
+        res.json(people);
+      }
     });
   },
   create: (req, res) => {
@@ -22,13 +22,13 @@ module.exports = {
       isFeatured: req.body.isFeatured,
       gem: req.body.gem
     });
-    
+
     newPerson.save(function(err, person) {
       if (err) {
         console.log("create error: " + err);
       }
       console.log("created ", person.name);
+      res.json(person);
     });
-    
   }
-}
+};
