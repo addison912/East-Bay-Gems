@@ -19,6 +19,8 @@ var checkHidden = function() {
 };
 
 $(document).ready(function() {
+  var user = JSON.parse(sessionStorage.getItem("currentUser"));
+  console.log(user);
   console.log("Sanity check");
   $(".modal").modal();
   $(".slider").slider({
@@ -36,9 +38,7 @@ $(document).ready(function() {
     checkHidden();
   });
 
-
-  
-/* ///////////AJAX calls to populate page/////////// */
+  ////////////////get all gems////////////////////
   $.ajax({
     method: "GET",
     url: "/api/places",
@@ -78,7 +78,9 @@ $(document).ready(function() {
     }
   });
 
-  // post new place
+  //////////////////////////////////////
+  /////////// post new gem ///////////
+  //post place
   $("#newPlaceForm").on("submit", function(e) {
     $.ajax({
       method: "POST",
@@ -86,9 +88,10 @@ $(document).ready(function() {
       data: $(this).serialize(),
       success: newPlaceSuccess
     });
-
-    function newPlaceSuccess(json) {
-      console.log(json);
+    function newPlaceSuccess(gem) {
+      user.posts.push(gem._id);
+      let stringifiedPosts = JSON.stringify({ posts: user.posts });
+      userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
     }
   });
   //post new person
@@ -100,15 +103,15 @@ $(document).ready(function() {
       success: newPersonSuccess
     });
 
-    function newPersonSuccess(json) {
-      console.log(json);
+    function newPersonSuccess(gem) {
+      user.posts.push(gem._id);
+      let stringifiedPosts = JSON.stringify({ posts: user.posts });
+      userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
     }
   });
 
-  var user = JSON.parse(sessionStorage.getItem("currentUser"));
-  console.log(user);
-  
-  // Add's likes to users likes array when user like a gem
+  ///////////////////////////////////////////////
+  //////////////add like to user/////////////////
   $("#gems").on("click", ".halfway-fab", function() {
     let gem = this.name;
     let likes;
@@ -119,33 +122,18 @@ $(document).ready(function() {
       console.log(user.likes);
 
       let stringifiedLikes = JSON.stringify({ likes: likes });
-      $.ajax({
-        method: "PUT",
-        url: `/api/users/${user.uid}`,
-        contentType: "application/json",
-        data: stringifiedLikes,
-        dataType: "json",
-        success: updateUserSuccess,
-        error: updateUserError
-      });
-      function updateUserSuccess() {
-        console.log("success", gem);
-      }
-      function updateUserError() {
-        console.log("error");
-      }
+
+      userPut(user.uid, stringifiedLikes, `Added ${gem} to user liked posts`);
     } else {
-      M.toast({html: "You've already liked this post"})
-    
+      M.toast({ html: "You've already liked this post" });
     }
   });
-
-  //Search function
+  ///////////////////////////////////////////////
+  ///////////////search filter function//////////
   $("#search").on("keyup", function() {
     var value = $(this)
       .val()
       .toLowerCase();
-
     $("#gems .card").filter(function() {
       $(this).toggle(
         $(this)
@@ -156,7 +144,8 @@ $(document).ready(function() {
     });
   });
 });
-//More magic
+/////////////////////////////////////////////
+///////////////shuffle function/////////////
 let shuffle = array => {
   var m = array.length,
     t,
@@ -173,8 +162,8 @@ let shuffle = array => {
   }
   return array;
 };
-
-//
+//////////////////////////////////////////
+/////shuffle gems and add cards///////////
 let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
@@ -198,9 +187,30 @@ let populate = () => {
                 </div>`;
     if (document.getElementById("gems")) {
       $("#gems").append(cardHtml);
+
+      ///////////////////////////////
+      ////////resize photos//////////
       document
         .getElementById(`${gem._id}`)
         .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
     }
   });
 };
+
+function userPut(uid, data, successMessage) {
+  $.ajax({
+    method: "PUT",
+    url: `/api/users/${uid}`,
+    contentType: "application/json",
+    data: data,
+    dataType: "json",
+    success: updateUserSuccess,
+    error: updateUserError
+  });
+  function updateUserSuccess() {
+    console.log(successMessage);
+  }
+  function updateUserError() {
+    console.log("error");
+  }
+}
