@@ -81,7 +81,8 @@ li.indicator-item.active {
 }
 
 .caption {
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), -2px -2px 8px rgba(0, 0, 0, 0.7), 2px -2px 8px rgba(0, 0, 0, 0.7), -2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), -2px -2px 8px rgba(0, 0, 0, 0.7),
+    2px -2px 8px rgba(0, 0, 0, 0.7), -2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 #userImg {
@@ -100,5 +101,12 @@ li.indicator-item.active {
   margin: 0;
   align-self: flex-end;
 }
-
-/*# sourceMappingURL=main.css.map */
+#toast-container {
+  top: 10%;
+  right: 7%;
+  max-width: 86%;
+}
+.fab {
+  color: grey;
+  margin: 8px;
+}

@@ -132,7 +132,8 @@ $(document).ready(function() {
         console.log("error");
       }
     } else {
-      console.log("You've already liked this post");
+      M.toast({html: "You've already liked this post"})
+    
     }
   });
   ///////////////////////////////////////////////
