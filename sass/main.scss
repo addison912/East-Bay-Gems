@@ -34,6 +34,21 @@ li.indicator-item.active {
   top: 252px;
 }
 
+ // Class for when element is above threshold
+ .pin-top {
+  position: relative;
+}
+
+// Class for when element is below threshold
+.pin-bottom {
+  position: relative;
+}
+
+// Class for when element is pinned
+.pinned {
+  position: fixed !important;
+}
+
 #search{
   width: 90%;
 }

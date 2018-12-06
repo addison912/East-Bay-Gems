@@ -18,10 +18,13 @@ var checkHidden = function() {
   }
 };
 
+    
+
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
   console.log(user);
   console.log("Sanity check");
+  $('.pushpin').pushpin();
   $(".modal").modal();
   $(".slider").slider({
     height: 800
