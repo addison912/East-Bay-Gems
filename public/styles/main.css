@@ -36,6 +36,11 @@ li.indicator-item.active {
   top: 252px;
 }
 
+.sticky {
+  position: fixed;
+  top: 60px;
+}
+
 #search {
   width: 90%;
 }

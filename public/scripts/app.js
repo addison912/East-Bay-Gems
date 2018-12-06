@@ -17,6 +17,21 @@ var checkHidden = function() {
     $(".place").removeClass("hide");
   }
 };
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  console.log(scroll);
+
+});
+
+///////////////Sticky Nav////////////////
+var num1 = 246; 
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > num1) {
+      $('#sidebar').addClass('sticky');
+  } else {
+      $('#sidebar').removeClass('sticky');
+  } 
+});
 
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
