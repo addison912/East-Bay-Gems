@@ -17,6 +17,8 @@ var checkHidden = function() {
     $(".place").removeClass("hide");
   }
 };
+
+
 $(document).ready(function() {
   console.log("Sanity check");
   $(".modal").modal();
@@ -43,9 +45,8 @@ $(document).ready(function() {
       $("#submitPlace").addClass("hide");
     }
   });
-  $("#like-button").on("click", function() {
-    console.log("hello");
-  });
+  
+  
 
   $.ajax({
     method: "GET",
@@ -103,10 +104,41 @@ $(document).ready(function() {
     }
   });
 
+  var user = JSON.parse(sessionStorage.getItem("currentUser"));
+  console.log(user);
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+///////////////////////////////////////////////
   $("#gems").on("click", ".halfway-fab", function() {
     let gem = this.name;
-    console.log(gem);
+    let likes = [];
+    likes = user.likes;
+    console.log(typeof user.likes)
+    
+    if (!likes.includes(gem)){
+      likes.push(gem);
+      $.ajax({
+        method: "PUT",
+        url: `/api/users/${user.uid}`,
+        data: {"likes":`${likes}`},
+        dataType: "json",
+        success: updateUserSuccess,
+        error: updateUserError
+      });
+    function updateUserSuccess(){
+      console.log('success', gem);
+  
+    }
+    function updateUserError(){
+      console.log('error');
+    }
+    } else {
+        console.log("You've already liked this post");
+      }
+      
   });
+///////////////////////////////////////////////
+///////////////////////////////////////////////
 
   $("#search").on("keyup", function() {
     var value = $(this)
