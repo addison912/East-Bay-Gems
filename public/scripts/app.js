@@ -23,9 +23,9 @@ $(document).ready(function() {
   $(".slider").slider({
     height: 800
   });
-  $('.fixed-action-btn').floatingActionButton();
+  $(".fixed-action-btn").floatingActionButton();
   $("select").formSelect();
-  $('.sidenav').sidenav();
+  $(".sidenav").sidenav();
   $("#places").on("click", function() {
     $("#places_menu").toggleClass("hide");
     checkHidden();
@@ -43,10 +43,10 @@ $(document).ready(function() {
       $("#submitPlace").addClass("hide");
     }
   });
+  $("#like-button").on("click", function() {
+    console.log("hello");
+  });
 
-
-  
-  
   $.ajax({
     method: "GET",
     url: "/api/places",
@@ -103,22 +103,26 @@ $(document).ready(function() {
     }
   });
 
-  $('#gems').on('click', '.halfway-fab', function(){
-    let gem = this.name
+  $("#gems").on("click", ".halfway-fab", function() {
+    let gem = this.name;
     console.log(gem);
-  })
+  });
 
-  
-    $("#search").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      
-      $("#gems .card").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
+  $("#search").on("keyup", function() {
+    var value = $(this)
+      .val()
+      .toLowerCase();
+
+    $("#gems .card").filter(function() {
+      $(this).toggle(
+        $(this)
+          .text()
+          .toLowerCase()
+          .indexOf(value) > -1
+      );
     });
-
+  });
 });
-
 
 let shuffle = array => {
   var m = array.length,
@@ -143,11 +147,15 @@ let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
-                  <div class="card-image">
+    cardHtml = `<div attr="${gem.city}" class="${
+      gem.gem
+    } card small horizontal hoverable" id=${gem._id}>
+                  <div class="card-image waves-effect waves-block waves-light">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <div class="card-content"><a name="${
+                      gem._id
+                    }" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                       <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
                         gem.name
                       } - ${gem.city}</span>
@@ -163,11 +171,13 @@ let populate = () => {
                       <p>Info</p>
                     </div>
                 </div>`;
-    $("#gems").append(cardHtml);
-    document
-      .getElementById(`${gem._id}`)
-      .querySelector(".card-image").style.backgroundImage = `url("${
-      gem.photo
-    }")`;
+    if (document.getElementById("gems")) {
+      $("#gems").append(cardHtml);
+      document
+        .getElementById(`${gem._id}`)
+        .querySelector(".card-image").style.backgroundImage = `url("${
+        gem.photo
+      }")`;
+    }
   });
 };

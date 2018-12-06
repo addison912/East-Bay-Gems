@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 let currentUser = {};
 
 
+=======
+>>>>>>> 76532fac6963f0bd1b7f228a1ab67017bc1592af
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   let userData = {
@@ -28,7 +31,9 @@ function onSignIn(googleUser) {
   function userSuccess(user) {
     if (user) {
       console.log(user.username + " already exists");
-      currentUser = user;
+      sessionStorage.setItem("currentUser", JSON.stringify(user));
+
+      sessionStorage.setItem("loggedIn", true);
     } else {
       createNewUser(userData);
       console.log("creating new user: " + profile.getName());
