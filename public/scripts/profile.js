@@ -81,7 +81,7 @@ function addPosts() {
                           <p>${gem.description}</p>
                         </div>
                         <div class="card-action">
-                          <a href="${gem.url}">More info</a>
+                          <a href="${gem.url}">More info</a> <a href="#!" class="right deletePost" name="${gem.gem} ${gem._id}" >Delete Post</a>
                         </div>
                       </div>
                       <div class="card-reveal col l4">
@@ -98,4 +98,31 @@ function addPosts() {
       }
     }
   });
+  $('.deletePost').on('click', function(){
+    let gemType = this.name.split(" ")[0]
+    let postId = this.name.split(" ")[1]
+    console.log(gemType);
+    console.log(postId);
+    deletePost(gemType, postId)
+    refreshPage()
+  })
 }
+
+function deletePost(gemType, postId){
+  $.ajax({
+    method: "DELETE",
+    url: `/api/${gemType}/${postId}`,
+    data: "data",
+    dataType: "json",
+    success: deleteSuccess,
+    error: deleteError
+  });
+  function deleteSuccess(){
+    console.log('Post Deleted');
+  }
+  function deleteError(){
+    console.log("Delete Error");
+  }
+}
+
+

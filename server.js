@@ -43,6 +43,8 @@ app.get("/api/people", ctrl.People.index);
 //create a person
 app.post("/api/people", ctrl.People.create);
 
+app.delete("/api/person/:id", ctrl.People.delete);
+
 ////////////Places//////////////////
 //get all places
 app.get("/api/places", ctrl.Places.index);
@@ -57,7 +59,7 @@ app.get("/api/places/:id", ctrl.Places.show);
 app.post("/api/places", ctrl.Places.create);
 
 // delete a place
-app.delete("/api/places/:id", ctrl.Places.delete);
+app.delete("/api/place/:id", ctrl.Places.delete);
 
 // update place
 app.put("/api/places/:id", ctrl.Places.update);

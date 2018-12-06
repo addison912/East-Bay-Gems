@@ -93,9 +93,9 @@ $(document).ready(function() {
     });
     function newPlaceSuccess(gem) {
       user.posts.push(gem._id);
-      alert(gem._id);
+      
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
-      alert(stringifiedPosts);
+      
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
     }
   });
