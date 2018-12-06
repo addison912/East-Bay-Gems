@@ -96,7 +96,11 @@ li.indicator-item.active {
   position: absolute;
   top: 100px;
 }
-
+#toast-container {
+  top: 10%;
+  right: 7%;
+  max-width: 86%;
+}
 .fab{
   color: grey;
   margin: 8px;

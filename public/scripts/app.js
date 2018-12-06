@@ -18,7 +18,6 @@ var checkHidden = function() {
   }
 };
 
-
 $(document).ready(function() {
   console.log("Sanity check");
   $(".modal").modal();
@@ -45,8 +44,6 @@ $(document).ready(function() {
       $("#submitPlace").addClass("hide");
     }
   });
-  
-  
 
   $.ajax({
     method: "GET",
@@ -106,40 +103,41 @@ $(document).ready(function() {
 
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
   console.log(user);
-///////////////////////////////////////////////
-///////////////////////////////////////////////
-///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
   $("#gems").on("click", ".halfway-fab", function() {
     let gem = this.name;
-    let likes = [];
-    likes.push(user.likes);
-    
-    console.log(likes);
-    
-    if (!likes.includes(gem)){
+    let likes;
+    likes = user.likes;
+
+    if (!likes.includes(gem)) {
       likes.push(gem);
+      console.log(user.likes);
+
+      let stringifiedLikes = JSON.stringify({ likes: likes });
       $.ajax({
         method: "PUT",
         url: `/api/users/${user.uid}`,
-        data: {"likes":`${likes}`},
+        contentType: "application/json",
+        data: stringifiedLikes,
         dataType: "json",
         success: updateUserSuccess,
         error: updateUserError
       });
-    function updateUserSuccess(){
-      console.log('success', gem);
-  
-    }
-    function updateUserError(){
-      console.log('error');
-    }
-    } else {
-        console.log("You've already liked this post");
+      function updateUserSuccess() {
+        console.log("success", gem);
       }
-      
+      function updateUserError() {
+        console.log("error");
+      }
+    } else {
+      M.toast({html: "You've already liked this post"})
+    
+    }
   });
-///////////////////////////////////////////////
-///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
 
   $("#search").on("keyup", function() {
     var value = $(this)
@@ -161,7 +159,6 @@ let shuffle = array => {
   var m = array.length,
     t,
     i;
-
   // While there remain elements to shuffle…
   while (m) {
     // Pick a remaining element…
@@ -172,7 +169,6 @@ let shuffle = array => {
     array[m] = array[i];
     array[i] = t;
   }
-
   return array;
 };
 

@@ -36,7 +36,7 @@ module.exports = {
     // get user id from url params (`req.params`)
     var uid = req.params.uid;
     db.Users.findOneAndUpdate(
-      {uid: uid},
+      { uid: uid },
       req.body,
       { new: true },
       (err, updatedUser) => {
