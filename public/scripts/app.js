@@ -112,8 +112,9 @@ $(document).ready(function() {
   $("#gems").on("click", ".halfway-fab", function() {
     let gem = this.name;
     let likes = [];
-    likes = user.likes;
-    console.log(typeof user.likes)
+    likes.push(user.likes);
+    
+    console.log(likes);
     
     if (!likes.includes(gem)){
       likes.push(gem);
