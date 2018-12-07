@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 
 #logo {
   margin-left: 15px;
-  color: #f60300;
+  color: #33eceb;
 }
 
 .header {
@@ -34,18 +35,6 @@ li.indicator-item.active {
 
 .halfway-fab {
   top: 252px;
-}
-
-.pin-top {
-  position: relative;
-}
-
-.pin-bottom {
-  position: relative;
-}
-
-.pinned {
-  position: fixed !important;
 }
 
 #search {
@@ -125,6 +114,32 @@ li.indicator-item.active {
 #userName {
   margin: 0;
   align-self: flex-end;
+}
+
+.card-content {
+  overflow: scroll !important;
+  margin-bottom: 60px !important;
+  margin-top: 5px !important;
+}
+
+@media only screen and (max-width: 601px) {
+  p {
+    font-size: 0.8em !important;
+  }
+
+  card-title {
+    font-size: 0.8em !important;
+  }
+
+  a.brand-logo {
+    font-size: 1.5em;
+  }
+
+  #logo {
+    position: absolute;
+    top: 18px;
+    right: 130px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
