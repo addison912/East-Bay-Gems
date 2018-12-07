@@ -181,18 +181,18 @@ let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    /* console.log(user.likes);
+    console.log(user.likes);
     if ((user.likes).includes(gem._id)) {
-      var heart = "fas fa-gem fa-1x";
+      var heart = "fas fa-heart fa-1x";
         }else{
-          var heart = "far fa-gem fa-1x"
-        } */
+          var heart = "far fa-heart fa-1x"
+        }
     cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="heart far fa-heart"></i></a>
-                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${gem.name} - ${gem.city}</span>
+                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="heart ${heart}"></i></a>
+                      <span class="card-title activator grey-text text-darken-4"><i class="fas fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${gem.name} - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
