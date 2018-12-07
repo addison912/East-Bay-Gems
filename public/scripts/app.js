@@ -22,7 +22,6 @@ var checkHidden = function() {
 
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
-  console.log(user);
   console.log("Sanity check");
   $('.pushpin').pushpin();
   $(".modal").modal();
@@ -60,7 +59,6 @@ $(document).ready(function() {
   function peopleSuccess(people) {
     allPeople = people;
     populate();
-    console.log(results);
   }
   function placeError() {
     console.log("error");
@@ -113,8 +111,12 @@ $(document).ready(function() {
     }
   });
 
+
+
+
   ///////////////////////////////////////////////
   //////////////add like to user/////////////////
+
   $("#gems").on("click", ".halfway-fab", function() {
     let gem = this.name;
     let likes;
@@ -123,6 +125,7 @@ $(document).ready(function() {
     if (!likes.includes(gem)) {
       likes.push(gem);
       console.log(user.likes);
+      
 
       let stringifiedLikes = JSON.stringify({ likes: likes });
 
@@ -168,16 +171,21 @@ let shuffle = array => {
 //////////////////////////////////////////
 /////shuffle gems and add cards///////////
 let populate = () => {
+  var user = JSON.parse(sessionStorage.getItem("currentUser"));
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
-  
   results.forEach(gem => {
-    console.log(gem.url);
+    /* console.log(user.likes);
+    if ((user.likes).includes(gem._id)) {
+      var heart = "fas fa-gem fa-1x";
+        }else{
+          var heart = "far fa-gem fa-1x"
+        } */
     cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="heart far fa-heart"></i></a>
                       <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${gem.name} - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
@@ -190,14 +198,18 @@ let populate = () => {
                     <p>Info</p>
                   </div>
                 </div>`;
+    $('.heart').on('click', function(){
+      $(this).removeClass("far fa-heart").addClass('fas fa-heart');
+    })
+    
     if (document.getElementById("gems")) {
-      $("#gems").append(cardHtml);
+    $("#gems").append(cardHtml);
 
-      ///////////////////////////////
-      ////////resize photos//////////
-      document
-        .getElementById(`${gem._id}`)
-        .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
+    ///////////////////////////////
+    ////////resize photos//////////
+    document
+      .getElementById(`${gem._id}`)
+      .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
     }
   });
 };
