@@ -11,6 +11,8 @@ It's a webpage.  Go to https://east-bay-gems.herokuapp.com, login and submit a g
 ### Prerequisites
 ​
 A computer with internet access.
+
+
 Fingers, or some other means of navigating the web. 
 ​
 ```
@@ -24,6 +26,8 @@ Login to your account
 Click your photo in the top right corner
 ​
 Example:
+
+
 ![alt text](https://lh4.googleusercontent.com/-wZbE0FQJVOU/AAAAAAAAAAI/AAAAAAAAAyA/nQg_iGhYm1g/s96-c/photo.jpg)
 
 ​
@@ -88,6 +92,8 @@ let shuffle = array => {
 ## Contributing
 ​
 [Fisher-Yates Shuffle](https://bost.ocks.org/mike/shuffle/) - 3rd party code used to shuffle front page
+
+
 [Search Function](https://www.w3schools.com/howto/howto_js_filter_lists.asp) - Help from Jquery Docs
 ​
 
