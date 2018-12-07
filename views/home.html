@@ -119,26 +119,26 @@
                   </select>
                 </div>
                 <div class="input-field col s6">
-                  <input placeholder="Name of Place" name="name" type="text">
-                </div>
-                <div class="input-field col s6">
-                  <input placeholder="Park, Bar, Retaurant..." name="type" type="text">
-                </div>
-                <div class="input-field col s6">
-                  <select name="gem">
+                  <select  name="gem">
                     <option value="" disabled selected>Choose Person or Place</option>
-                    <option  value="person">person</option>
+                    <option  value="people">person</option>
                     <option value="place">place</option>
                   </select>
                 </div>
+                <div class="input-field col s6">
+                  <input placeholder="Name of Place" class="validate" name="name" type="text" required>
+                </div>
+                <div class="input-field col s6">
+                  <input placeholder="Park, Bar, Retaurant..." class="validate" name="type" type="text" required>
+                </div>
                 <div class="input-field col s12">
-                  <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
+                  <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
                 </div>
                 <div class="input-field col s6">
-                  <input name="photo" placeholder="Image URL" type="text">
+                  <input name="photo" placeholder="Image URL" class="validate" type="text" required>
                 </div>
                 <div class="input-field col s6">
-                  <input name="url" placeholder="Website" type="text">
+                  <input name="url" placeholder="Website" class="validate" type="text" required>
                 </div>
                 <div class="modal-footer">
                   <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
@@ -147,50 +147,50 @@
             </div>
           </div>
         
-        <!-- Submit Person -->
-        <div id="submitPerson" class="hide">
-          <div class="row">
-          <form id='newPersonForm' class="col l12">
-            <div class="input-field col l6">
-              <select name="city">
-                <option value="" disabled selected>Where do they hang out?</option>
-                <option  value="Berkeley">Berkeley</option>
-                <option value="Oakland">Oakland</option>
-                <option value="Emeryville">Emeryville</option>
-              </select>
-            </div>
-            <div class="input-field col l6">
-              <input placeholder="Name of Person" name="name" type="text">
-            </div>
-            <div class="input-field col l6">
-                <select name="isAlive">
+          <!-- Submit Person -->
+          <div id="submitPerson" class="hide">
+            <div class="row">
+              <form id='newPersonForm' class="col l12">
+                <div class="input-field col l6">
+                  <select name="city">
+                    <option value="" disabled selected>Where do they hang out?</option>
+                    <option  value="Berkeley">Berkeley</option>
+                    <option value="Oakland">Oakland</option>
+                    <option value="Emeryville">Emeryville</option>
+                  </select>
+                </div>
+                <div class="input-field col l6">
+                  <select name="gem">
+                    <option value="" disabled selected>Choose Person or Place</option>
+                    <option  value="people">person</option>
+                    <option value="place">place</option>
+                  </select>
+                </div>
+                <div class="input-field col l6">
+                  <input placeholder="Name of Person" name="name" class="validate" type="text" required>
+                </div>
+                <div class="input-field col l6">
+                  <select name="isAlive">
                     <option value="" disabled selected>Alive?</option>
                     <option  value="true">yes</option>
                     <option value="false">no</option>
                   </select>
+                </div>
+                <div class="input-field col l12">
+                  <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
+                </div>
+                <div class="input-field col l6">
+                  <input name="photo" placeholder="Image URL" class="validate" type="text" required>
+                </div>
+                <div class="input-field col l6">
+                  <input name="url" placeholder="Website" class="validate" type="text" required>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                </div>
+              </form>
             </div>
-            <div class="input-field col l6">
-              <select name="gem">
-                <option value="" disabled selected>Choose Person or Place</option>
-                <option  value="person">person</option>
-                <option value="place">place</option>
-              </select>
-            </div>
-            <div class="input-field col l12">
-              <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
-            </div>
-            <div class="input-field col l6">
-              <input name="photo" placeholder="Image URL" type="text">
-            </div>
-            <div class="input-field col l6">
-              <input name="url" placeholder="Website" type="text">
-            </div>
-            <div class="modal-footer">
-              <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
-            </div>
-          </form>
-        </div>
-        </div>
+          </div>
         </div>
       </div>
     </header>
@@ -202,14 +202,10 @@
               <span class="white-text">I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
               </span>
-              </div> 
-            </div>
+            </div> 
+          </div>
         </div>
-
-
         <div  class="row">
-            
-          
           <!-- Results Filter -->
           
           <div id="sidebar" class="col s12 m12 l3 push-l9">
@@ -221,12 +217,8 @@
                 <div class="search-wrapper focused">
                   <input id="search" placeholder="Search">
                   <i id="searchicon" class="material-icons">search</i>
-  
-
-                </div>
-                  
+                </div>    
               </li>
-              
               <li class="collection-item">
                 <h6>What are you looking for?</h6>
                 <form action="#">
@@ -290,32 +282,25 @@
           </div>
         
           <div id="gems" class="col m12 l9 pull-l3">
-          
-          
-          
-
-            </div>
-        </div>
-        
+          </div>
+        </div>  
       </div>
       <footer class="page-footer grey darken-1">
+        <div class="container">
+          <div class="row">
+            <div class="col l12 s12">
+              <h5 class="white-text ">Website Desgined by Langdon Froker and Addison Moore</h5>
+              <p class="grey-text text-lighten-4">Obviously you want to hire us after seeing this masterpiece so click on that link down below and get in touch!</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
           <div class="container">
-            <div class="row">
-              <div class="col l12 s12">
-                <h5 class="white-text ">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-            </div>
+          © 2018 Addison Moore and Langdon Froker
+          <a cl8ss="grey-text text-lighten-4 right" href="/about.html">Learn More</a>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2018 Addison Moore and Langdon Froker
-            <a cl8ss="grey-text text-lighten-4 right" href="/about.html">Learn More</a>
-            </div>
-          </div>
-        </footer>
-    
-    
+        </div>
+      </footer>
     <!-- Materialize JS -->
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

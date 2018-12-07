@@ -10,7 +10,7 @@ var places_list = [
     photo: "https://i.imgur.com/vkPLCG7.jpg",
     url: "https://en.wikipedia.org/wiki/Albany_Bulb",
     coordinates: { lat: 37.5324, lng: -122.1929 },
-    isFeatured: false,
+    isFeatured: true,
     gem: "place"
   },
   {
@@ -62,7 +62,7 @@ var people_list = [
     photo: "https://upload.wikimedia.org/wikipedia/commons/7/70/Pinkman.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   },
   {
     name: "Green Man",
@@ -72,7 +72,7 @@ var people_list = [
     photo: "https://media.giphy.com/media/eUoGmTHkmGv72/giphy.gif",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   },
   {
     name: "Orange Man",
@@ -83,7 +83,7 @@ var people_list = [
       "https://cdn-images-1.medium.com/max/1600/1*mI7YNvyBsT6ZtTks3TaaKg.jpeg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   },
   {
     name: "Red Man",
@@ -94,7 +94,7 @@ var people_list = [
       "https://pbs.twimg.com/profile_images/1035390955011026946/-VTnbCes_400x400.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   },
   {
     name: "Blue Man",
@@ -105,7 +105,7 @@ var people_list = [
       "https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2015/04/0415_bluemangroup_oneuseonly.jpg",
     url: "https://en.wikipedia.org/wiki/Pink_Man",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   }
 ];
 

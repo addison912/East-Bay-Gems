@@ -36,10 +36,13 @@ li.indicator-item.active {
   top: 252px;
 }
 
+<<<<<<< HEAD
 .sticky {
   position: fixed;
   top: 60px;
 }
+=======
+>>>>>>> master
 
 #search {
   width: 90%;
@@ -120,3 +123,8 @@ li.indicator-item.active {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+#editPlaceForm{
+  width: 90%;
+  margin: 0 auto;
+}
