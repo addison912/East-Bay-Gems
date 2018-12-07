@@ -52,7 +52,7 @@ module.exports = {
     });
     newPlace.save(function(err, place) {
       if (err) {
-        console.log("create error: " + err);
+        return console.log("create error: " + err);
       }
       console.log("created ", place.name);
       res.json(place);
