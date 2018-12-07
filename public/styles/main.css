@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #1e4363;
+  background: #1E4363;
 }
 
 .slider .slides {
@@ -34,6 +34,18 @@ li.indicator-item.active {
 
 .halfway-fab {
   top: 252px;
+}
+
+.pin-top {
+  position: relative;
+}
+
+.pin-bottom {
+  position: relative;
+}
+
+.pinned {
+  position: fixed !important;
 }
 
 #search {
@@ -112,17 +124,6 @@ li.indicator-item.active {
 #userName {
   margin: 0;
   align-self: flex-end;
-}
-
-.footer-copyright {
-  text-align: center;
-}
-
-footer p {
-  text-align: center;
-}
-footer h5 {
-  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

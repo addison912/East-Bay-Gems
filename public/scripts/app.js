@@ -5,15 +5,15 @@ var allPeople;
 var checkHidden = function() {
   if ($("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").removeClass("hide");
-    $(".person").removeClass("hide");
+    $(".people").removeClass("hide");
   } else if (!$("#places").is(":checked") && !$("#people").is(":checked")) {
     $(".place").removeClass("hide");
-    $(".person").removeClass("hide");
+    $(".people").removeClass("hide");
   } else if (!$("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").addClass("hide");
-    $(".person").removeClass("hide");
+    $(".people").removeClass("hide");
   } else if ($("#places").is(":checked") && !$("#people").is(":checked")) {
-    $(".person").addClass("hide");
+    $(".people").addClass("hide");
     $(".place").removeClass("hide");
   }
 };
@@ -22,6 +22,7 @@ $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
   console.log(user);
   console.log("Sanity check");
+  $(".pushpin").pushpin();
   $(".modal").modal();
   $(".slider").slider({
     height: 800
@@ -82,35 +83,39 @@ $(document).ready(function() {
   /////////// post new gem ///////////
   //post place
   $("#newPlaceForm").on("submit", function(e) {
-    e.preventDefault();
     $.ajax({
       method: "POST",
       url: "/api/places",
       data: $(this).serialize(),
-      success: newPlaceSuccess
+      success: newPlaceSuccess,
+      error: newPlaceError
     });
     function newPlaceSuccess(gem) {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
-      location.reload();
+    }
+    function newPlaceError() {
+      console.log("error");
     }
   });
   //post new person
   $("#newPersonForm").on("submit", function(e) {
-    e.preventDefault();
     $.ajax({
       method: "POST",
       url: "/api/people",
       data: $(this).serialize(),
-      success: newPersonSuccess
+      success: newPersonSuccess,
+      error: newPersonError
     });
 
     function newPersonSuccess(gem) {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
-      location.reload();
+    }
+    function newPersonError() {
+      console.log("error");
     }
   });
 
@@ -171,17 +176,19 @@ let shuffle = array => {
 let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
+
   results.forEach(gem => {
+    console.log(gem.url);
     cardHtml = `<div attr="${gem.city}" class="${
       gem.gem
     } card small horizontal hoverable" id=${gem._id}>
-                  <div class="card-image waves-effect waves-block waves-light">
+                  <div class="card-image">
                   </div>
                   <div class="card-stacked">
                     <div class="card-content"><a name="${
                       gem._id
                     }" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
+                      <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${
                         gem.name
                       } - ${gem.city}</span>
                       <p>${gem.description}</p>
@@ -198,7 +205,6 @@ let populate = () => {
     if (document.getElementById("gems")) {
       $("#gems").append(cardHtml);
 
-      ///////////////////////////////
       ////////resize photos//////////
       document
         .getElementById(`${gem._id}`)

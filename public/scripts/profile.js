@@ -34,6 +34,7 @@ function getAll() {
     gems = allPeople.concat(allPlaces);
     gems = shuffle(gems);
     addPosts();
+    addLiked();
   }
   function placeError() {
     console.log("error");
@@ -64,15 +65,48 @@ function addProfileInfo() {
   $("#userImg").attr("src", `${user.imageUrl}`);
   $("#userName").text(user.fullName);
 }
+function addLiked() {
+  user.likes.forEach(like => {
+    for (let i = 0; i < gems.length; i++) {
+      if (like == gems[i]._id) {
+        let gem = gems[i];
+        cardHtml = `<div attr="${gem.city}" class="${
+          gem.gem
+        } card small horizontal hoverable" id=${gem._id}>
+                      <div class="card-image waves-effect waves-block waves-light">
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4"><i class="far fa-gem fa-1x top"></i> ${
+                            gem.name
+                          } - ${gem.city}</span>
+                          <p>${gem.description}</p>
+                        </div>
+                      </div>
+                      <div class="card-reveal col l4">
+                          <span class="card-title grey-text text-darken-4">Lat=, Lon=<i class="material-icons right">close</i></span>
+                          <p>Info</p>
+                        </div>
+                    </div>`;
+        $("#userLikes").append(cardHtml);
+        document
+          .getElementById(`${gem._id}`)
+          .querySelector(".card-image").style.backgroundImage = `url("${
+          gem.photo
+        }")`;
+      }
+    }
+  });
+}
 
 function addPosts() {
   user.posts.forEach(post => {
-    let p = 0;
     for (let i = 0; i < gems.length; i++) {
       if (post == gems[i]._id) {
-        p++;
         let gem = gems[i];
-        cardHtml = `<div class="card small horizontal hoverable" id=${gem._id}>
+        cardHtml = `<div attr="${gem.city}" class="${
+          gem.gem
+        } card small horizontal hoverable" id=${gem._id}>
                       <div class="card-image waves-effect waves-block waves-light">
                       </div>
                       <div class="card-stacked">
@@ -84,10 +118,10 @@ function addPosts() {
                         </div>
                         <div class="card-action">
                           <a href="${gem.url}">More info</a>
-
-                          <a href="#" class="right delete">Delete</a>
+                          <a href="#!" class="right deletePost" name="${
+                            gem.gem
+                          } ${gem._id}">Delete Post</a>
                           <a href="#edit-post" class="right edit modal-trigger">Edit</a>
-                          
                         </div>
                       </div>
                       <div class="card-reveal col l4">
@@ -220,6 +254,44 @@ function addPosts() {
       }
     }
   });
+
+  let posts = user.posts;
+  console.log(posts);
+  $(".deletePost").on("click", function() {
+    let gemType = this.name.split(" ")[0];
+    let postId = this.name.split(" ")[1];
+    let posts = user.posts;
+
+    if (posts.includes(postId)) {
+      var index = posts.indexOf(postId);
+      if (index > -1) {
+        posts.splice(index, 1);
+      }
+      console.log(user.posts);
+
+      let stringifiedPosts = JSON.stringify({ posts: posts });
+
+      userPut(user.uid, stringifiedPosts, `Removed Post from profile`);
+      deletePost(gemType, postId);
+    }
+  });
+}
+function deletePost(gemType, postId) {
+  $.ajax({
+    method: "DELETE",
+    url: `/api/${gemType}/${postId}`,
+    data: "data",
+    dataType: "json",
+    success: deleteSuccess,
+    error: deleteError
+  });
+  function deleteSuccess() {
+    console.log("Post Deleted");
+    location.reload();
+  }
+  function deleteError() {
+    console.log("Delete Error");
+  }
 }
 
 // handle form data when it's submitted
@@ -230,12 +302,32 @@ function gemSubmit(formId, category) {
     gemPut(formId, data, category, `successfully edited ${formId}`);
   });
 }
+
 // edit gem data
 function gemPut(postId, data, category, successMessage) {
   $.ajax({
     method: "PUT",
     url: `/api/${category}/${postId}`,
     data: data,
+    success: updateUserSuccess,
+    error: updateUserError
+  });
+  function updateUserSuccess() {
+    console.log(successMessage);
+  }
+  function updateUserError() {
+    console.log("error");
+  }
+}
+
+//edit user
+function userPut(uid, data, successMessage) {
+  $.ajax({
+    method: "PUT",
+    url: `/api/users/${uid}`,
+    contentType: "application/json",
+    data: data,
+    dataType: "json",
     success: updateUserSuccess,
     error: updateUserError
   });

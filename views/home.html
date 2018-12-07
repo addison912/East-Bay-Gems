@@ -110,87 +110,87 @@
                 <div id="submitPlace" class="hide">
                   <div class="row">
                     <form id='newPlaceForm' class="col s12">
-                      <div class="input-field col l6">
-                        <select name="city" required>
-                          <option value="" disabled selected>Choose City</option>
-                          <option  value="Berkeley">Berkeley</option>
-                          <option value="Oakland">Oakland</option>
-                          <option value="Emeryville">Emeryville</option>
-                        </select>
-                      </div>
-                      <div class="input-field col s6">
-                        <input placeholder="Name of Place" name="name" type="text" required>
-                      </div>
-                      <div class="input-field col s6">
-                        <input placeholder="Park, Bar, Retaurant..." name="type" type="text">
-                      </div>
-                      <div class="input-field col s6">
-                        <select name="gem">
-                          <option value="" disabled selected>Choose Person or Place</option>
-                          <option  value="person">person</option>
-                          <option value="place">place</option>
-                        </select>
-                      </div>
-                      <div class="input-field col s12">
-                        <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
-                      </div>
-                      <div class="input-field col s6">
-                        <input name="photo" placeholder="Image URL" type="text">
-                      </div>
-                      <div class="input-field col s6">
-                        <input name="url" placeholder="Website" type="text">
-                      </div>
-                      <div class="modal-footer">
-                        <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
-                      </div>
-                    </form>
+                        <div class="input-field col l6">
+                          <select name="city">
+                            <option value="" disabled selected>Choose City</option>
+                            <option  value="Berkeley">Berkeley</option>
+                            <option value="Oakland">Oakland</option>
+                            <option value="Emeryville">Emeryville</option>
+                          </select>
+                        </div>
+                        <div class="input-field col s6">
+                          <select  name="gem">
+                            <option value="" disabled selected>Choose Person or Place</option>
+                            <option  value="people">person</option>
+                            <option value="place">place</option>
+                          </select>
+                        </div>
+                        <div class="input-field col s6">
+                          <input placeholder="Name of Place" class="validate" name="name" type="text" required>
+                        </div>
+                        <div class="input-field col s6">
+                          <input placeholder="Park, Bar, Retaurant..." class="validate" name="type" type="text" required>
+                        </div>
+                        <div class="input-field col s12">
+                          <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
+                        </div>
+                        <div class="input-field col s6">
+                          <input name="photo" placeholder="Image URL" class="validate" type="text" required>
+                        </div>
+                        <div class="input-field col s6">
+                          <input name="url" placeholder="Website" class="validate" type="text" required>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                
+                  <!-- Submit Person -->
+                  <div id="submitPerson" class="hide">
+                    <div class="row">
+                      <form id='newPersonForm' class="col l12">
+                        <div class="input-field col l6">
+                          <select name="city">
+                            <option value="" disabled selected>Where do they hang out?</option>
+                            <option  value="Berkeley">Berkeley</option>
+                            <option value="Oakland">Oakland</option>
+                            <option value="Emeryville">Emeryville</option>
+                          </select>
+                        </div>
+                        <div class="input-field col l6">
+                          <select name="gem">
+                            <option value="" disabled selected>Choose Person or Place</option>
+                            <option  value="people">person</option>
+                            <option value="place">place</option>
+                          </select>
+                        </div>
+                        <div class="input-field col l6">
+                          <input placeholder="Name of Person" name="name" class="validate" type="text" required>
+                        </div>
+                        <div class="input-field col l6">
+                          <select name="isAlive">
+                            <option value="" disabled selected>Alive?</option>
+                            <option  value="true">yes</option>
+                            <option value="false">no</option>
+                          </select>
+                        </div>
+                        <div class="input-field col l12">
+                          <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
+                        </div>
+                        <div class="input-field col l6">
+                          <input name="photo" placeholder="Image URL" class="validate" type="text" required>
+                        </div>
+                        <div class="input-field col l6">
+                          <input name="url" placeholder="Website" class="validate" type="text" required>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                        </div>
+                      </form>
                   </div>
                 </div>
-              
-              <!-- Submit Person -->
-              <div id="submitPerson" class="hide">
-                <div class="row">
-                <form id='newPersonForm' class="col l12">
-                  <div class="input-field col l6">
-                    <select name="city">
-                      <option value="" disabled selected>Where do they hang out?</option>
-                      <option  value="Berkeley">Berkeley</option>
-                      <option value="Oakland">Oakland</option>
-                      <option value="Emeryville">Emeryville</option>
-                    </select>
-                  </div>
-                  <div class="input-field col l6">
-                    <input placeholder="Name of Person" name="name" type="text">
-                  </div>
-                  <div class="input-field col l6">
-                      <select name="isAlive">
-                          <option value="" disabled selected>Alive?</option>
-                          <option  value="true">yes</option>
-                          <option value="false">no</option>
-                        </select>
-                  </div>
-                  <div class="input-field col l6">
-                    <select name="gem">
-                      <option value="" disabled selected>Choose Person or Place</option>
-                      <option  value="person">person</option>
-                      <option value="place">place</option>
-                    </select>
-                  </div>
-                  <div class="input-field col l12">
-                    <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
-                  </div>
-                  <div class="input-field col l6">
-                    <input name="photo" placeholder="Image URL" type="text">
-                  </div>
-                  <div class="input-field col l6">
-                    <input name="url" placeholder="Website" type="text">
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
-                  </div>
-                </form>
-              </div>
-              </div>
               </div>
             </div>
 
