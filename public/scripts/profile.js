@@ -207,6 +207,7 @@ function addPosts() {
                 </form>`
               );
           }
+          M.textareaAutoResize($("textarea"));
           $("select").formSelect();
           gemSubmit(gem._id, category);
         });
