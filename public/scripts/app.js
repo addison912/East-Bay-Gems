@@ -18,9 +18,12 @@ var checkHidden = function() {
   }
 };
 
+
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
   console.log("Sanity check");
+  
+  $(".dropdown-trigger").dropdown();
   $(".pushpin").pushpin();
   $(".modal").modal();
   $(".slider").slider({
@@ -37,7 +40,7 @@ $(document).ready(function() {
   $("#people").on("click", function() {
     checkHidden();
   });
-
+  
   ////////////////get all gems////////////////////
   $.ajax({
     method: "GET",

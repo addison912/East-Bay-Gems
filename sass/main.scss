@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 body {
   background: #1E4363;
@@ -11,7 +12,7 @@ body {
 
 #logo {
   margin-left: 15px;
-  color: #f60300;
+  color: #33eceb;
 }
 
 .header {
@@ -34,20 +35,6 @@ li.indicator-item.active {
   top: 252px;
 }
 
- // Class for when element is above threshold
- .pin-top {
-  position: relative;
-}
-
-// Class for when element is below threshold
-.pin-bottom {
-  position: relative;
-}
-
-// Class for when element is pinned
-.pinned {
-  position: fixed !important;
-}
 
 #search{
   width: 90%;
@@ -127,4 +114,26 @@ li.indicator-item.active {
 #userName {
   margin: 0;
   align-self: flex-end;
+}
+.card-content{
+  overflow: scroll !important;
+  margin-bottom: 60px !important;
+  margin-top: 5px !important;
+}
+
+@media only screen and (max-width: 601px) {
+  p{
+    font-size: .8em !important;
+  }
+  card-title {
+    font-size: .8em !important;
+  }
+  a.brand-logo{
+    font-size: 1.5em;
+  }
+  #logo {
+    position: absolute;
+    top: 18px;
+    right: 130px;
+  }
 }
