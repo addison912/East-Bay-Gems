@@ -119,26 +119,28 @@
                   </select>
                 </div>
                 <div class="input-field col s6">
-                  <input placeholder="Name of Place" name="name" type="text">
-                </div>
-                <div class="input-field col s6">
-                  <input placeholder="Park, Bar, Retaurant..." name="type" type="text">
-                </div>
-                <div class="input-field col s6">
-                  <select name="gem">
+                  <select  name="gem">
                     <option value="" disabled selected>Choose Person or Place</option>
-                    <option  value="person">person</option>
+                    <option  value="people">person</option>
                     <option value="place">place</option>
                   </select>
                 </div>
+                <div class="input-field col s6">
+                  <input placeholder="Name of Place" class="validate" name="name" type="text" required>
+                  
+                </div>
+                <div class="input-field col s6">
+                  <input placeholder="Park, Bar, Retaurant..." class="validate" name="type" type="text" required>
+                </div>
+               
                 <div class="input-field col s12">
-                  <textarea placeholder="Description" name="description" class="materialize-textarea"></textarea>
+                  <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
                 </div>
                 <div class="input-field col s6">
-                  <input name="photo" placeholder="Image URL" type="text">
+                  <input name="photo" placeholder="Image URL" class="validate" type="text" required>
                 </div>
                 <div class="input-field col s6">
-                  <input name="url" placeholder="Website" type="text">
+                  <input name="url" placeholder="Website" class="validate" type="text" required>
                 </div>
                 <div class="modal-footer">
                   <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
@@ -172,7 +174,7 @@
             <div class="input-field col l6">
               <select name="gem">
                 <option value="" disabled selected>Choose Person or Place</option>
-                <option  value="person">person</option>
+                <option  value="people">person</option>
                 <option value="place">place</option>
               </select>
             </div>

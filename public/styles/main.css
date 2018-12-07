@@ -116,3 +116,8 @@ li.indicator-item.active {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+#editPlaceForm{
+  width: 90%;
+  margin: 0 auto;
+}
