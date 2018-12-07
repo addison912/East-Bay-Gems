@@ -61,10 +61,13 @@ let shuffle = array => {
   return array;
 };
 
+// add user image and name
 function addProfileInfo() {
   $("#userImg").attr("src", `${user.imageUrl}`);
   $("#userName").text(user.fullName);
 }
+
+//append liked posts to the page
 function addLiked() {
   user.likes.forEach(like => {
     for (let i = 0; i < gems.length; i++) {
@@ -99,6 +102,7 @@ function addLiked() {
   });
 }
 
+// add user posts to the page
 function addPosts() {
   user.posts.forEach(post => {
     for (let i = 0; i < gems.length; i++) {
@@ -131,6 +135,9 @@ function addPosts() {
                     </div>`;
         $("#userPosts").append(cardHtml);
 
+        // on edit button click open edit form
+
+        // if card contains place open edit place form
         $(`#${gem._id} .edit`).click(() => {
           let category;
           if (gem.gem == "place") {
@@ -138,6 +145,7 @@ function addPosts() {
             $(`#editPost`)
               .empty()
               .append(
+                //  edit place form
                 `
                 <form id='editPlaceForm' data-id="${gem._id}">
                   <div class="row">
@@ -184,11 +192,14 @@ function addPosts() {
                   </div>
                 </form>`
               );
+
+            // if card contains person open edit person form
           } else if (gem.gem == "person") {
             category = "people";
             $(`#editPost`)
               .empty()
               .append(
+                // edit person form
                 `<form id='editPersonForm' data-id="${gem._id}" class="col l12">
 
                  <div class="row">
@@ -241,13 +252,14 @@ function addPosts() {
                 </form>`
               );
           }
+
+          ///resize form text area to fit text content
           M.textareaAutoResize($("textarea"));
           $("select").formSelect();
           gemSubmit(gem._id, category);
         });
 
-        $(`#${gem._id} .delete`).click(() => {});
-
+        /// add card image to post
         $(`#${gem._id} .card-image`).css({
           "background-image": `url("${gem.photo}")`
         });
@@ -255,22 +267,18 @@ function addPosts() {
     }
   });
 
-  let posts = user.posts;
-  console.log(posts);
+  // delete post on click
   $(".deletePost").on("click", function() {
     let gemType = this.name.split(" ")[0];
     let postId = this.name.split(" ")[1];
     let posts = user.posts;
-
     if (posts.includes(postId)) {
       var index = posts.indexOf(postId);
       if (index > -1) {
         posts.splice(index, 1);
       }
       console.log(user.posts);
-
       let stringifiedPosts = JSON.stringify({ posts: posts });
-
       userPut(user.uid, stringifiedPosts, `Removed Post from profile`);
       deletePost(gemType, postId);
     }
@@ -303,7 +311,7 @@ function gemSubmit(formId, category) {
   });
 }
 
-// edit gem data
+// edit gem data function
 function gemPut(postId, data, category, successMessage) {
   $.ajax({
     method: "PUT",
@@ -320,7 +328,7 @@ function gemPut(postId, data, category, successMessage) {
   }
 }
 
-//edit user
+//edit user function
 function userPut(uid, data, successMessage) {
   $.ajax({
     method: "PUT",
