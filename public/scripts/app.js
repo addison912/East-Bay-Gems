@@ -117,9 +117,6 @@ $(document).ready(function() {
     }
   });
 
-
-
-
   ///////////////////////////////////////////////
   //////////////add like to user/////////////////
 
@@ -130,8 +127,6 @@ $(document).ready(function() {
 
     if (!likes.includes(gem)) {
       likes.push(gem);
-      console.log(user.likes);
-      
 
       let stringifiedLikes = JSON.stringify({ likes: likes });
 
@@ -181,18 +176,23 @@ let populate = () => {
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    console.log(user.likes);
-    if ((user.likes).includes(gem._id)) {
+    if (user.likes.includes(gem._id)) {
       var heart = "fas fa-heart fa-1x";
-        }else{
-          var heart = "far fa-heart fa-1x"
-        }
-    cardHtml = `<div attr="${gem.city}" class="${gem.gem} card small horizontal hoverable" id=${gem._id}>
+    } else {
+      var heart = "far fa-heart fa-1x";
+    }
+    cardHtml = `<div attr="${gem.city}" class="${
+      gem.gem
+    } card small horizontal hoverable" id=${gem._id}>
                   <div class="card-image">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content"><a name="${gem._id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="heart ${heart}"></i></a>
-                      <span class="card-title activator grey-text text-darken-4"><i class="fas fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${gem.name} - ${gem.city}</span>
+                    <div class="card-content"><a name="${
+                      gem._id
+                    }" class="btn-floating halfway-fab waves-effect waves-light red"><i class="heart ${heart}"></i></a>
+                      <span class="card-title activator grey-text text-darken-4"><i class="fas fa-gem fa-1x top waves-effect waves-block waves-light"></i> ${
+                        gem.name
+                      } - ${gem.city}</span>
                       <p>${gem.description}</p>
                     </div>
                     <div class="card-action">
@@ -200,23 +200,36 @@ let populate = () => {
                     </div>
                   </div>
                   <div class="card-reveal col l4">
-                    <span class="card-title grey-text text-darken-4">Lat=, Lon=<i class="material-icons right">close</i></span>
-                    <p>Info</p>
+
+                    <span class="card-title grey-text text-darken-4">
+                    <i class="material-icons">close</i></span>
+                    <div class="map"></div>
+                    
                   </div>
                 </div>`;
-    $('.heart').on('click', function(){
-      $(this).removeClass("far fa-heart").addClass('fas fa-heart');
-    })
-    
-    if (document.getElementById("gems")) {
-    $("#gems").append(cardHtml);
+    $(".heart").on("click", function() {
+      $(this)
+        .removeClass("far fa-heart")
+        .addClass("fas fa-heart");
+    });
 
-    ///////////////////////////////
-    ////////resize photos//////////
-    document
-      .getElementById(`${gem._id}`)
-      .querySelector(".card-image").style.backgroundImage = `url("${gem.photo}")`;
+    if (document.getElementById("gems")) {
+      $("#gems").append(cardHtml);
+
+      ///////////////////////////////
+      ////////resize photos//////////
+      document
+        .getElementById(`${gem._id}`)
+        .querySelector(".card-image").style.backgroundImage = `url("${
+        gem.photo
+      }")`;
     }
+  });
+  //////////// add map ///////////
+
+  gems.forEach(gem => {
+    let reveal = document.getElementById(`${gem._id}`).querySelector(".map");
+    initMap(reveal);
   });
 };
 
@@ -236,4 +249,11 @@ function userPut(uid, data, successMessage) {
   function updateUserError() {
     console.log("error");
   }
+}
+
+function initMap(cardReveal) {
+  let map = new google.maps.Map(cardReveal, {
+    center: { lat: 37.8044, lng: -122.2711 },
+    zoom: 8
+  });
 }

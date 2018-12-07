@@ -12,7 +12,7 @@ body {
 
 #logo {
   margin-left: 15px;
-  color: #f60300;
+  color: #33eceb;
 }
 
 .header {
@@ -125,6 +125,19 @@ li.indicator-item.active {
 #userName {
   margin: 0;
   align-self: flex-end;
+}
+
+footer {
+  text-align: center;
+}
+
+.map {
+  height: 90%;
+  width: 100%;
+}
+
+.card-reveal {
+  padding: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
