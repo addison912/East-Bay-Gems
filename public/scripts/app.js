@@ -18,7 +18,6 @@ var checkHidden = function() {
   }
 };
 
-    
 
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));

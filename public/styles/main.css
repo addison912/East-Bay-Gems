@@ -36,6 +36,13 @@ li.indicator-item.active {
   top: 252px;
 }
 
+<<<<<<< HEAD
+.sticky {
+  position: fixed;
+  top: 60px;
+}
+=======
+>>>>>>> master
 
 #search {
   width: 90%;
