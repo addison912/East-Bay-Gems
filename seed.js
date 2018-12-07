@@ -36,7 +36,7 @@ var places_list = [
       "http://storage.googleapis.com/zagat-article-ss/Port_Costa_Warehouse-Virginia_Miller.jpg?h=646&w=646&auto=format",
     url: "http://www.warehousecafeportcosta.com/",
     coordinates: { lat: 38.04644, lng: -122.18327 },
-    isFeatured: false,
+    isFeatured: true,
     gem: "place"
   },
   {
