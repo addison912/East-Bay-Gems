@@ -47,7 +47,6 @@ app.delete("/api/people/:id", ctrl.People.delete);
 
 app.put("/api/people/:id", ctrl.People.update);
 
-
 ////////////Places//////////////////
 //get all places
 app.get("/api/places", ctrl.Places.index);

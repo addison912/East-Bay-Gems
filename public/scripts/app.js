@@ -18,11 +18,10 @@ var checkHidden = function() {
   }
 };
 
-
 $(document).ready(function() {
   var user = JSON.parse(sessionStorage.getItem("currentUser"));
   console.log("Sanity check");
-  $('.pushpin').pushpin();
+  $(".pushpin").pushpin();
   $(".modal").modal();
   $(".slider").slider({
     height: 800
@@ -86,12 +85,16 @@ $(document).ready(function() {
       method: "POST",
       url: "/api/places",
       data: $(this).serialize(),
-      success: newPlaceSuccess
+      success: newPlaceSuccess,
+      error: newPlaceError
     });
     function newPlaceSuccess(gem) {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
+    }
+    function newPlaceError() {
+      console.log("error");
     }
   });
   //post new person
@@ -100,13 +103,17 @@ $(document).ready(function() {
       method: "POST",
       url: "/api/people",
       data: $(this).serialize(),
-      success: newPersonSuccess
+      success: newPersonSuccess,
+      error: newPersonError
     });
 
     function newPersonSuccess(gem) {
       user.posts.push(gem._id);
       let stringifiedPosts = JSON.stringify({ posts: user.posts });
       userPut(user.uid, stringifiedPosts, `added ${gem.name} to user posts`);
+    }
+    function newPersonError() {
+      console.log("error");
     }
   });
 
