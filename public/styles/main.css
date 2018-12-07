@@ -141,5 +141,17 @@ li.indicator-item.active {
     right: 130px;
   }
 }
+footer {
+  text-align: center;
+}
+
+.map {
+  height: 90%;
+  width: 100%;
+}
+
+.card-reveal {
+  padding: 0 !important;
+}
 
 /*# sourceMappingURL=main.css.map */

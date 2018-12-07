@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 body {
   background: #1e4363;
@@ -34,7 +34,6 @@ li.indicator-item.active {
 .halfway-fab {
   top: 252px;
 }
-
 
 #search {
   width: 90%;
@@ -115,20 +114,20 @@ li.indicator-item.active {
   margin: 0;
   align-self: flex-end;
 }
-.card-content{
+.card-content {
   overflow: scroll !important;
   margin-bottom: 60px !important;
   margin-top: 5px !important;
 }
 
 @media only screen and (max-width: 601px) {
-  p{
-    font-size: .8em !important;
+  p {
+    font-size: 0.8em !important;
   }
   card-title {
-    font-size: .8em !important;
+    font-size: 0.8em !important;
   }
-  a.brand-logo{
+  a.brand-logo {
     font-size: 1.5em;
   }
   #logo {
@@ -136,4 +135,17 @@ li.indicator-item.active {
     top: 18px;
     right: 130px;
   }
+}
+
+footer {
+  text-align: center;
+}
+
+.map {
+  height: 90%;
+  width: 100%;
+}
+
+.card-reveal {
+  padding: 0 !important;
 }
