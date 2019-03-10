@@ -80,7 +80,7 @@ li.indicator-item.active {
 }
 
 .nav-wrapper {
-  background: rgba(0, 0, 0, 0.75);
+  background: #111;
 }
 
 .row .col.l4 {
@@ -96,7 +96,9 @@ li.indicator-item.active {
 }
 
 .caption {
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), -2px -2px 8px rgba(0, 0, 0, 0.7), 2px -2px 8px rgba(0, 0, 0, 0.7), -2px 2px 8px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 16px 16px 32px 16px;
+  border-radius: 5px;
 }
 
 #userImg {

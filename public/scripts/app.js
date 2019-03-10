@@ -1,8 +1,8 @@
-var results = [];
-var allPlaces;
-var allPeople;
+let results = [];
+let allPlaces;
+let allPeople;
 
-var checkHidden = function() {
+checkHidden = function() {
   if ($("#places").is(":checked") && $("#people").is(":checked")) {
     $(".place").removeClass("hide");
     $(".people").removeClass("hide");
@@ -18,11 +18,14 @@ var checkHidden = function() {
   }
 };
 
-
 $(document).ready(function() {
-  var user = JSON.parse(sessionStorage.getItem("currentUser"));
+  let user;
+  if (sessionStorage.getItem("currentUser")) {
+    user = JSON.parse(sessionStorage.getItem("currentUser"));
+  }
   console.log("Sanity check");
-  
+
+  //initialize materialize elements
   $(".dropdown-trigger").dropdown();
   $(".pushpin").pushpin();
   $(".modal").modal();
@@ -40,8 +43,8 @@ $(document).ready(function() {
   $("#people").on("click", function() {
     checkHidden();
   });
-  
-  ////////////////get all gems////////////////////
+
+  //////////////// get all gems ////////////////////
   $.ajax({
     method: "GET",
     url: "/api/places",
@@ -175,11 +178,15 @@ let shuffle = array => {
 //////////////////////////////////////////
 /////shuffle gems and add cards///////////
 let populate = () => {
-  var user = JSON.parse(sessionStorage.getItem("currentUser"));
+  let user;
+  if (sessionStorage.getItem("currentUser")) {
+    user = JSON.parse(sessionStorage.getItem("currentUser"));
+  }
+
   gems = allPeople.concat(allPlaces);
   results = shuffle(gems);
   results.forEach(gem => {
-    if (user.likes.includes(gem._id)) {
+    if (user && user.likes.includes(gem._id)) {
       var heart = "fas fa-heart fa-1x";
     } else {
       var heart = "far fa-heart fa-1x";
@@ -230,10 +237,10 @@ let populate = () => {
   });
   //////////// add map ///////////
 
-  gems.forEach(gem => {
-    let reveal = document.getElementById(`${gem._id}`).querySelector(".map");
-    initMap(reveal);
-  });
+  // gems.forEach(gem => {
+  //   let reveal = document.getElementById(`${gem._id}`).querySelector(".map");
+  //   initMap(reveal);
+  // });
 };
 
 function userPut(uid, data, successMessage) {
