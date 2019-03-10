@@ -4,79 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <!-- Import Google Sign In -->
-  <meta name="google-signin-scope" content="profile email" />
-  <meta
-    name="google-signin-client_id"
-    content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
-  />
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Import Google Sign In -->
+    <meta name="google-signin-scope" content="profile email" />
+    <meta
+      name="google-signin-client_id"
+      content="686275522190-dpeitrij78oj1qavuobvf6thb7lnr5s4.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link
-    rel="icon"
-    type="image/png"
-    href="/images/favicon.png"
-    sizes="24x24"
-  />
+      type="text/css"
+      rel="stylesheet"
+      href="/styles/materialize.min.css"
+      media="screen,projection"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="24x24"
+    />
     <title>East Bay Gems</title>
   </head>
   <body>
-
     <!-- Nav Bar -->
     <div class="navbar-fixed">
       <nav class="transparent">
         <div class="nav-wrapper">
-            <a class='dropdown-trigger sidenav-trigger' href='#' data-target='dropdown1'><i class="material-icons">menu</i></a>
-         
-          <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
-          <ul class="right">
+          <a
+            class="dropdown-trigger sidenav-trigger"
+            href="#"
+            data-target="dropdown1"
+            ><i class="material-icons">menu</i></a
+          >
 
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/home.html">Browse</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Random</a></li>
-            <li><a href="/about.html">About</a></li>
-          </ul>
-              <li id="sign-in-button">
-                  <a
-                    class="waves-effect waves-light btn modal-trigger"
-                    href="#sign-in"
-                    >Login</a
-                  >
-                </li>
-                <li>
-                  <a
-                    id="nav-profile-pic"
-                    class="hide dropdown-trigger"
-                    data-target="user-dropdown"
-                  ></a></li>
+          <a href="/" class="brand-logo"
+            ><i id="logo" class="fas fa-gem"></i>East Bay Gems</a
+          >
+          <ul class="right">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/home.html">Browse</a></li>
+              <li><a href="/about.html">About</a></li>
+            </ul>
+            <li id="sign-in-button">
+              <a
+                class="waves-effect waves-light btn modal-trigger"
+                href="#sign-in"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a
+                id="nav-profile-pic"
+                class="hide dropdown-trigger"
+                data-target="user-dropdown"
+              ></a>
+            </li>
           </ul>
         </div>
       </nav>
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="/home.html">Browse</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Random</a></li>
-            <li><a href="/about.html">About</a></li>
-        </ul>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/home.html">Browse</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
     </div>
     <header>
-
-    <!-- Sign in start -->
-    <!-- User Dropdown -->
-    <ul id="user-dropdown" class="dropdown-content">
+      <!-- Sign in start -->
+      <!-- User Dropdown -->
+      <ul id="user-dropdown" class="dropdown-content">
         <li><a href="#submit-new" class="modal-trigger">New Post</a></li>
         <li><a href="/profile.html">Profile</a></li>
         <li class="divider" tabindex="-1"></li>
         <li><a href="#" onclick="signOut();">Sign out</a></li>
       </ul>
-  
+
       <!-- Sign in modal -->
       <div id="sign-in" class="modal">
         <div class="modal-content sign-in">
@@ -98,7 +117,7 @@
         </div>
       </div>
       <!-- Sign in end -->
-      
+
       <!-- Submit Post -->
       <div id="submit-new" class="modal">
         <div class="modal-content">
@@ -107,94 +126,166 @@
             <form class="col s12">
               <div class="input-field col s12">
                 <select id="gemSelector" name="gemSelector">
-                  <option value="" disabled selected>What would you like to submit?</option>
-                  <option  value="place">Place</option>
-                  <option  value="person">Person</option>
+                  <option value="" disabled selected
+                    >What would you like to submit?</option
+                  >
+                  <option value="place">Place</option>
+                  <option value="person">Person</option>
                 </select>
               </div>
             </form>
           </div>
-            <!-- Submit Place -->
+          <!-- Submit Place -->
           <div id="submitPlace" class="hide">
             <div class="row">
-              <form id='newPlaceForm' class="col s12">
+              <form id="newPlaceForm" class="col s12">
                 <div class="input-field col l6">
                   <select name="city">
                     <option value="" disabled selected>Choose City</option>
-                    <option  value="Berkeley">Berkeley</option>
+                    <option value="Berkeley">Berkeley</option>
                     <option value="Oakland">Oakland</option>
                     <option value="Emeryville">Emeryville</option>
                   </select>
                 </div>
                 <div class="input-field col s6">
-                  <select  name="gem">
-                    <option value="" disabled selected>Choose Person or Place</option>
-                    <option  value="people">person</option>
+                  <select name="gem">
+                    <option value="" disabled selected
+                      >Choose Person or Place</option
+                    >
+                    <option value="people">person</option>
                     <option value="place">place</option>
                   </select>
                 </div>
                 <div class="input-field col s6">
-                  <input placeholder="Name of Place" class="validate" name="name" type="text" required>
+                  <input
+                    placeholder="Name of Place"
+                    class="validate"
+                    name="name"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="input-field col s6">
-                  <input placeholder="Park, Bar, Retaurant..." class="validate" name="type" type="text" required>
+                  <input
+                    placeholder="Park, Bar, Retaurant..."
+                    class="validate"
+                    name="type"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="input-field col s12">
-                  <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
+                  <textarea
+                    placeholder="Description"
+                    name="description"
+                    class="materialize-textarea validate"
+                    required
+                  ></textarea>
                 </div>
                 <div class="input-field col s6">
-                  <input name="photo" placeholder="Image URL" class="validate" type="text" required>
+                  <input
+                    name="photo"
+                    placeholder="Image URL"
+                    class="validate"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="input-field col s6">
-                  <input name="url" placeholder="Website" class="validate" type="text" required>
+                  <input
+                    name="url"
+                    placeholder="Website"
+                    class="validate"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="modal-footer">
-                  <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                  <button
+                    class="btn waves-effect waves-light modal-close"
+                    type="submit"
+                    name="action"
+                  >
+                    Submit<i class="material-icons right">send</i>
+                  </button>
                 </div>
               </form>
             </div>
           </div>
-        
+
           <!-- Submit Person -->
           <div id="submitPerson" class="hide">
             <div class="row">
-              <form id='newPersonForm' class="col l12">
+              <form id="newPersonForm" class="col l12">
                 <div class="input-field col l6">
                   <select name="city">
-                    <option value="" disabled selected>Where do they hang out?</option>
-                    <option  value="Berkeley">Berkeley</option>
+                    <option value="" disabled selected
+                      >Where do they hang out?</option
+                    >
+                    <option value="Berkeley">Berkeley</option>
                     <option value="Oakland">Oakland</option>
                     <option value="Emeryville">Emeryville</option>
                   </select>
                 </div>
                 <div class="input-field col l6">
                   <select name="gem">
-                    <option value="" disabled selected>Choose Person or Place</option>
-                    <option  value="people">person</option>
+                    <option value="" disabled selected
+                      >Choose Person or Place</option
+                    >
+                    <option value="people">person</option>
                     <option value="place">place</option>
                   </select>
                 </div>
                 <div class="input-field col l6">
-                  <input placeholder="Name of Person" name="name" class="validate" type="text" required>
+                  <input
+                    placeholder="Name of Person"
+                    name="name"
+                    class="validate"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="input-field col l6">
                   <select name="isAlive">
                     <option value="" disabled selected>Alive?</option>
-                    <option  value="true">yes</option>
+                    <option value="true">yes</option>
                     <option value="false">no</option>
                   </select>
                 </div>
                 <div class="input-field col l12">
-                  <textarea placeholder="Description" name="description" class="materialize-textarea validate" required></textarea>
+                  <textarea
+                    placeholder="Description"
+                    name="description"
+                    class="materialize-textarea validate"
+                    required
+                  ></textarea>
                 </div>
                 <div class="input-field col l6">
-                  <input name="photo" placeholder="Image URL" class="validate" type="text" required>
+                  <input
+                    name="photo"
+                    placeholder="Image URL"
+                    class="validate"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="input-field col l6">
-                  <input name="url" placeholder="Website" class="validate" type="text" required>
+                  <input
+                    name="url"
+                    placeholder="Website"
+                    class="validate"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="modal-footer">
-                  <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                  <button
+                    class="btn waves-effect waves-light modal-close"
+                    type="submit"
+                    name="action"
+                  >
+                    Submit<i class="material-icons right">send</i>
+                  </button>
                 </div>
               </form>
             </div>
@@ -202,95 +293,20 @@
         </div>
       </div>
     </header>
-      <div class="container">
-        <div class="row section">
-          <div class="col s12 m12 l12">
-            <div class="card-panel orange lighten-2">
-              <h3 class="header center">Find hidden gems in the East Bay submitted by users</h3>
-              
-            </div> 
+
+    <!-- main -->
+    <main class="container">
+      <!-- Top Banner -->
+      <div class="row section">
+        <div class="col s12 m12 l12">
+          <div class="card-panel orange lighten-2">
+            <h3 class="header center">
+              Find hidden gems in the East Bay submitted by users
+            </h3>
           </div>
         </div>
-        <div  class="row">
-          <!-- Results Filter -->
-          
-          <div id="sidebar" class="col s12 m12 l3 push-l9">
-            <ul class="collection with-header">
-              <li class="collection-header">
-                <h5>Filter Results</h5>
-              </li>
-              <li class="search collection-item">
-                <div class="search-wrapper focused">
-                  <input id="search" placeholder="Search">
-                  <i id="searchicon" class="material-icons">search</i>
-                </div>    
-              </li>
-              <li class="collection-item">
-                <h6>What are you looking for?</h6>
-                <form action="#">
-                  <p>
-                    <label> 
-                      <input id="people" type="checkbox"/><span>People</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input id="places" type="checkbox"/><span>Places</span>
-                    </label>
-                  </p>
-                </li>
-              <li class="collection-item">
-                <h6>City</h6>
-                <form action="#">
-                  <p>
-                    <label>
-                      <input class="cityCheck" type="checkbox"/><span>Berkeley</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input class="cityCheck" type="checkbox"/><span>Oakland</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input class="cityCheck"  type="checkbox"/><span>Emeryville</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input class="cityCheck"  type="checkbox"/><span>El Cerrito</span>
-                    </label>
-                  </p>
-                </form>
-              </li>
-              <li id="places_menu" class="collection-item hide">
-                <h6>Type</h6>
-                <form action="#">
-                  <p>
-                    <label>
-                      <input type="checkbox"/><span>Park</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"/><span>Bar</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"/><span>Restaurant</span>
-                    </label>
-                  </p>
-                </form>
-              </li>  
-            </ul>
-          </div>
-        
-          <div id="gems" class="col s12 m12 l9 pull-l3">
-          </div>
-        </div>  
       </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       <div id="map"></div>
@@ -304,24 +320,126 @@
               <h5 class="white-text ">Website Desgined by Langdon Froker and Addison Moore</h5>
               <p class="grey-text text-lighten-4">Obviously you want to hire us after seeing this masterpiece so click on that link down below and get in touch!</p>
             </div>
+=======
+
+      <!-- Results and Filter-->
+      <div class="row">
+        <!-- Filter -->
+        <div id="sidebar" class="col s12 m12 l3 push-l9">
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <h5>Filter Results</h5>
+            </li>
+            <li class="search collection-item">
+              <div class="search-wrapper focused">
+                <input id="search" placeholder="Search" />
+                <i id="searchicon" class="material-icons">search</i>
+              </div>
+            </li>
+            <li class="collection-item">
+              <h6>What are you looking for?</h6>
+              <form action="#">
+                <p>
+                  <label>
+                    <input id="people" type="checkbox" /><span>People</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input id="places" type="checkbox" /><span>Places</span>
+                  </label>
+                </p>
+              </form>
+            </li>
+            <li class="collection-item">
+              <h6>City</h6>
+              <form action="#">
+                <p>
+                  <label>
+                    <input class="cityCheck" type="checkbox" /><span
+                      >Berkeley</span
+                    >
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input class="cityCheck" type="checkbox" /><span
+                      >Oakland</span
+                    >
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input class="cityCheck" type="checkbox" /><span
+                      >Emeryville</span
+                    >
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input class="cityCheck" type="checkbox" /><span
+                      >El Cerrito</span
+                    >
+                  </label>
+                </p>
+              </form>
+            </li>
+            <li id="places_menu" class="collection-item hide">
+              <h6>Type</h6>
+              <form action="#">
+                <p>
+                  <label> <input type="checkbox" /><span>Park</span> </label>
+                </p>
+                <p>
+                  <label> <input type="checkbox" /><span>Bar</span> </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" /><span>Restaurant</span>
+                  </label>
+                </p>
+              </form>
+            </li>
+          </ul>
+        </div>
+
+        <div id="gems" class="col s12 m12 l9 pull-l3"></div>
+      </div>
+    </main>
+
+    <footer class="page-footer grey darken-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l12 s12">
+            <h5 class="white-text ">
+              Website Desgined by Langdon Froker and Addison Moore
+            </h5>
+            <p class="grey-text text-lighten-4">
+              Obviously you want to hire us after seeing this masterpiece so
+              click on that link down below and get in touch!
+            </p>
+>>>>>>> addison
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
           © 2018 Addison Moore and Langdon Froker
-          <a cl8ss="grey-text text-lighten-4 right" href="/about.html">Learn More</a>
-          </div>
+          <a cl8ss="grey-text text-lighten-4 right" href="/about.html"
+            >Learn More</a
+          >
         </div>
-      </footer>
+      </div>
+    </footer>
     <!-- Materialize JS -->
     <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap"></script>
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap"></script> -->
     <script type="text/javascript" src="/scripts/materialize.min.js"></script>
     <script type="text/javascript" src="/scripts/login.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-
   </body>
 </html>

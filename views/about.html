@@ -17,12 +17,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link 
-    rel="stylesheet" 
-    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-    crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
 
     <!-- Import materialize.css -->
     <link rel="stylesheet" type="text/css" href="/styles/main.css" />
@@ -40,164 +40,186 @@
       crossorigin="anonymous"
     />
     <link
-    rel="icon"
-    type="image/png"
-    href="/images/favicon.png"
-    sizes="24x24"
-  />
-
-    <title>About</title>
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="24x24"
+    />
   </head>
   <body>
-     <!-- Nav Bar -->
-     <div class="navbar-fixed">
-        <nav class="transparent">
-            <div class="nav-wrapper">
-                <a class='dropdown-trigger sidenav-trigger' href='#' data-target='dropdown1'><i class="material-icons">menu</i></a>
-             
-              <a href="/" class="brand-logo"><i id="logo" class="fas fa-gem"></i>East Bay Gems</a>
-              <ul class="right">
-    
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/home.html">Browse</a></li>
-                <li><a href="/home.html">Random</a></li>
-                <li><a href="/about.html">About</a></li>
-              </ul>
-                  <li id="sign-in-button">
-                      <a
-                        class="waves-effect waves-light btn modal-trigger"
-                        href="#sign-in"
-                        >Login</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        id="nav-profile-pic"
-                        class="hide dropdown-trigger"
-                        data-target="user-dropdown"
-                      ></a></li>
-              </ul>
-            </div>
-          </nav>
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="/home.html">Browse</a></li>
-                <li><a href="/home.html">Random</a></li>
-                <li><a href="/about.html">About</a></li>
-            </ul>
-      </div>
-      <header>
-  
-      <!-- Sign in start -->
-      <!-- User Dropdown -->
-      <ul id="user-dropdown" class="dropdown-content">
-          <li><a href="/profile.html">Profile</a></li>
-          <li class="divider" tabindex="-1"></li>
-          <li><a href="#" onclick="signOut();">Sign out</a></li>
-        </ul>
-    
-        <!-- Sign in modal -->
-        <div id="sign-in" class="modal">
-          <div class="modal-content sign-in">
-            <h5>Sign in</h5>
-            <div
-              class="g-signin2"
-              data-onsuccess="onSignIn"
-              data-theme="dark"
-            ></div>
-            <div class="flex-row">
-              <a class="waves-effect waves-light btn">Login</a
-              ><a class="waves-effect waves-light btn">Sign up</a>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-              >Close</a
-            >
-          </div>
+    <!-- Nav Bar -->
+    <div class="navbar-fixed">
+      <nav class="transparent">
+        <div class="nav-wrapper">
+          <a
+            class="dropdown-trigger sidenav-trigger"
+            href="#"
+            data-target="dropdown1"
+            ><i class="material-icons">menu</i></a
+          >
+
+          <a href="/" class="brand-logo"
+            ><i id="logo" class="fas fa-gem"></i>East Bay Gems</a
+          >
+          <ul class="right"></ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a
+                id="nav-profile-pic"
+                class="hide dropdown-trigger"
+                data-target="user-dropdown"
+              ></a>
+            </li>
+            <li><a href="/home.html">Browse</a></li>
+            <li><a href="/about.html">About</a></li>
+
+            <li id="sign-in-button">
+              <a
+                class="waves-effect waves-light btn modal-trigger"
+                href="#sign-in"
+              >
+                Login
+              </a>
+            </li>
+          </ul>
         </div>
-        <!-- Sign in end -->
+      </nav>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/home.html">Browse</a></li>
+        <li><a href="/home.html">Random</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Sign in start -->
+    <!-- User Dropdown -->
+    <ul id="user-dropdown" class="dropdown-content">
+      <li><a href="/profile.html">Profile</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="#" onclick="signOut();">Sign out</a></li>
+    </ul>
+
+    <!-- Sign in modal -->
+    <div id="sign-in" class="modal">
+      <div class="modal-content sign-in">
+        <h5>Sign in</h5>
+        <div
+          class="g-signin2"
+          data-onsuccess="onSignIn"
+          data-theme="dark"
+        ></div>
+        <div class="flex-row">
+          <a class="waves-effect waves-light btn">Login</a
+          ><a class="waves-effect waves-light btn">Sign up</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Close</a
+        >
+      </div>
+    </div>
+    <!-- Sign in end -->
     <div class="container">
       <div class="row section">
         <div class="col s12 m6 l6">
           <div class="card-panel ">
-              <div class="col l3">
-                  <img class="circle responsive-img" src="/images/addisonabout.png" alt="">
-              </div>
+            <div class="col l3">
+              <img
+                class="circle responsive-img"
+                src="/images/addisonabout.png"
+                alt=""
+              />
+            </div>
             <h2 class="header grey-text">Addison Moore</h2>
             <span class="grey-text">
-                <p>
-                    I'm a full stack developer and Bay Area Native. Before becoming
-                    a developer I worked as a museum curator and exhibition designer
-                    with a focus on interactive exhibition design. I worked to
-                    create engaging exhibitions that used technology to bring the
-                    museums where I worked into the 21st century.<br />
-                    <br />
-                    I left the museum word in 2015 to become a product designer an
-                    experiential marketing company, where I worked on The Bosco's
-                    core products and designed digital experiences for brands such
-                    as Warner Brothers, Nickelodeon, Tommy Hillfiger, Facebook,
-                    Sephora and hundreds more. <br />
-                    <br />
-                    After working with closely with the dev team at The Bosco and
-                    taking some web development courses, I decided to hone my
-                    skills in the Web Develpement Immersive at General Assembly. 
-                  </p>
+              <p>
+                I'm a full stack developer and Bay Area Native. Before becoming
+                a developer I worked as a museum curator and exhibition designer
+                with a focus on interactive exhibition design. I worked to
+                create engaging exhibitions that used technology to bring the
+                museums where I worked into the 21st century.<br />
+                <br />
+                I left the museum word in 2015 to become a product designer an
+                experiential marketing company, where I worked on The Bosco's
+                core products and designed digital experiences for brands such
+                as Warner Brothers, Nickelodeon, Tommy Hillfiger, Facebook,
+                Sephora and hundreds more. <br />
+                <br />
+                After working with closely with the dev team at The Bosco and
+                taking some web development courses, I decided to hone my skills
+                in the Web Develpement Immersive at General Assembly.
+              </p>
             </span>
             <div class="row  center-align">
-                <div class="col l4 offset-l3">
-                    <i class="fab fa-facebook fa-2x"></i>
-                    <i class="fab fa-twitter fa-2x"></i>
-                    <i class="fab fa-instagram fa-2x"></i>
-                    <i class="fab fa-github fa-2x"></i>
-                </div>
+              <div class="col l4 offset-l3">
+                <a href="https://www.linkedin.com/in/addison-moore/"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+                <a href="https://github.com/addison912"
+                  ><i class="fab fa-github fa-2x"></i
+                ></a>
               </div>
+            </div>
           </div>
         </div>
         <div class="col s12 m6 l6">
-            <div class="card-panel ">
-                <div class="col l3">
-                    <img class="circle responsive-img" src="/images/langabout.jpg" alt="">
-                </div>
-              <h2 class="header grey-text">Langdon Froker</h2>
-              <span class="grey-text">
-                  <p> I’m an aspiring full stack developer who is logic oriented with an 
-                    eye for design. I grew up in the Bay Area, but lived all over the world. 
-                    After college I decided to follow my passion for cooking and jumped headfirst 
-                    into the restaurant industry. <br><br>
-                    
-                    I worked in various kitchens before I found 
-                    a home at a small mom and pop butcher shop.  I loved the owners and supported
-                    their mission for sustainable, humane, and local meat as well as learning 
-                    the importance of efficiency and tenacity.<br><br>
-                  
-                    However, after working with them for 6 years, I decided it was time for a change.
-                    I was always fascinated by how things worked and how to improve them.  
-                    Programming seemed like the perfect fit.  I am motivated by challenging situations, 
-                    solving problems and looking for improvements to efficiency.  Currently I am most 
-                    proficient at html, css, sass, js and jquery and am learning python. </p>
-              </span>
-              <div class="row  center-align">
+          <div class="card-panel ">
+            <div class="col l3">
+              <img
+                class="circle responsive-img"
+                src="/images/langabout.jpg"
+                alt=""
+              />
+            </div>
+            <h2 class="header grey-text">Langdon Froker</h2>
+            <span class="grey-text">
+              <p>
+                I’m an aspiring full stack developer who is logic oriented with
+                an eye for design. I grew up in the Bay Area, but lived all over
+                the world. After college I decided to follow my passion for
+                cooking and jumped headfirst into the restaurant industry.
+                <br /><br />
+
+                I worked in various kitchens before I found a home at a small
+                mom and pop butcher shop. I loved the owners and supported their
+                mission for sustainable, humane, and local meat as well as
+                learning the importance of efficiency and tenacity.<br /><br />
+
+                However, after working with them for 6 years, I decided it was
+                time for a change. I was always fascinated by how things worked
+                and how to improve them. Programming seemed like the perfect
+                fit. I am motivated by challenging situations, solving problems
+                and looking for improvements to efficiency. Currently I am most
+                proficient at html, css, sass, js and jquery and am learning
+                python.
+              </p>
+            </span>
+            <div class="row  center-align">
+              <div class="col l4 offset-l3">
                 <div class="col l4 offset-l3">
-                    <i class="fab fa-facebook fa-2x"></i>
-                    <i class="fab fa-twitter fa-2x"></i>
-                    <i class="fab fa-instagram fa-2x"></i>
-                    <i class="fab fa-github fa-2x"></i>
+                  <a href="https://www.linkedin.com/in/addison-moore/"
+                    ><i class="fab fa-linkedin fa-2x"></i
+                  ></a>
+                  <a href="https://github.com/langdonf"
+                    ><i class="fab fa-github fa-2x"></i
+                  ></a>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
 
-     
-
-    <!-- Materialize JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="/scripts/materialize.min.js"></script>
-    <script type="text/javascript" src="/scripts/login.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+      <!-- Materialize JS -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"
+      ></script>
+      <script type="text/javascript" src="/scripts/materialize.min.js"></script>
+      <script type="text/javascript" src="/scripts/login.js"></script>
+      <script type="text/javascript" src="/scripts/app.js"></script>
+    </div>
   </body>
 </html>

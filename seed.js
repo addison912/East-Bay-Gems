@@ -60,7 +60,8 @@ var places_list = [
     city: "Oakland",
     url: "http://www.staygolddeli.com",
     photo:
-      "https://oaklandnorth.net/wp-content/uploads/2016/09/IMG_0397-600x400.jpg"
+      "https://oaklandnorth.net/wp-content/uploads/2016/09/IMG_0397-600x400.jpg",
+    gem: "place"
   },
   {
     name: "Brazil Cafe",
@@ -70,7 +71,8 @@ var places_list = [
     city: "Berkeley",
     url: "https://www.pedrosbrazilcafe.com/",
     photo:
-      "http://1.bp.blogspot.com/-mnDSsRYoOS8/Uho2nxw7Q6I/AAAAAAAAAYk/4V3JPbYO4K0/s640/P1080948.JPG"
+      "http://1.bp.blogspot.com/-mnDSsRYoOS8/Uho2nxw7Q6I/AAAAAAAAAYk/4V3JPbYO4K0/s640/P1080948.JPG",
+    gem: "place"
   }
 ];
 
@@ -93,7 +95,7 @@ var people_list = [
     photo: "http://www.seva.org/images/content/pagebuilder/wavy80-wavy2.jpg",
     url: "https://en.wikipedia.org/wiki/Wavy_Gravy",
     isAlive: true,
-    gem: "person"
+    gem: "people"
   },
   {
     name: "Huey Newton",
@@ -104,7 +106,7 @@ var people_list = [
       "http://cdn.vashtie.com/blog/wp-content/uploads/2016/02/1989huey.jpg",
     url: "https://en.wikipedia.org/wiki/Huey_P._Newton",
     isAlive: false,
-    gem: "person"
+    gem: "people"
   }
 ];
 
