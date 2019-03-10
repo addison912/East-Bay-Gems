@@ -101,6 +101,10 @@ li.indicator-item.active {
   border-radius: 5px;
 }
 
+i.fab {
+  color: black;
+}
+
 #userImg {
   border-radius: 50%;
   margin: 0 12px;
