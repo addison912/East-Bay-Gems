@@ -34,6 +34,9 @@ app.get("/about.html", function(req, res) {
 app.get("/profile.html", function(req, res) {
   res.sendFile("views/profile.html", { root: __dirname });
 });
+app.get("/googled36a3406dec4e8b8.html", function(req, res) {
+  res.sendFile("views/googled36a3406dec4e8b8.html", { root: __dirname });
+});
 
 //////////// People ////////////
 
