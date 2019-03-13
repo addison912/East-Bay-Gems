@@ -11,7 +11,6 @@
       name="google-signin-client_id"
       content="686275522190-khigsu6pv3vmv69ieqlmgde63jc6b23p.apps.googleusercontent.com"
     />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Import Google Icon Font -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -98,14 +97,11 @@
       <div class="modal-content sign-in">
         <h5>Sign in</h5>
         <div
+          id="my-signin2"
           class="g-signin2"
           data-onsuccess="onSignIn"
           data-theme="dark"
         ></div>
-        <div class="flex-row">
-          <a class="waves-effect waves-light btn">Login</a
-          ><a class="waves-effect waves-light btn">Sign up</a>
-        </div>
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat"
@@ -126,5 +122,10 @@
     <script type="text/javascript" src="/scripts/materialize.min.js"></script>
     <script type="text/javascript" src="/scripts/login.js"></script>
     <script type="text/javascript" src="/scripts/featured.js"></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
   </body>
 </html>
