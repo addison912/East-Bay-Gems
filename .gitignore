@@ -84,3 +84,5 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+client_secret_686275522190-ojksbb4pq8eojklkio0ojicevodnus37.apps.googleusercontent.com.json
